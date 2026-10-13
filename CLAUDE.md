@@ -66,7 +66,8 @@ Bildestier i `content/*.json` er relative til `images/` (f.eks. `utstillinger/va
 Bildene og tekstene fra Webnode ble importert med `migrering/importer-scrape.py` (se `docs` i handoff fra scraperen).
 - Verk har feltet `kilde` (originalt filnavn på Webnode) for sporbarhet.
 - Verk med `"todo"` mangler tittel, teknikk, mål og ordentlig alt-tekst. Fyll inn når Anita leverer, og fjern `todo`.
-- Bildene fra den gamle forsiden (25 enkeltverk) er ikke importert ennå, fordi det ikke er avklart hva de skal brukes til.
+- Bildene fra den gamle forsiden: 13 av 25 finnes allerede i utstillingene. De 12 andre ligger i `images/arkiv/` og er listet i `content/arkiv.json`. De vises ikke på siden før vi vet hvilken utstilling de hører til. Flytt dem da inn i riktig utstilling og fjern dem fra arkivet.
+- `/kopi-av-1-til-1-gyldepris-kunsthall/` (presentasjonsside for søknader) videresendes midlertidig (302) til 1-til-1-siden. Den skal bli en skjult side (`noindex`, ikke i meny eller sitemap) når innholdet finnes.
 
 ## Plassholdere
 `"plassholdere": true` i `content/site.json` fyller tomme felt og seksjoner med plassholderne fra designprototypen: «Verktittel I», «Teknikk · mål · år», «Tekst om utstillingen kommer.», Sted/Periode «—», 9 portretter, 6 eksempelinnlegg på Instagram, «Portrett av Anita», og utsnitt av de tre 1-til-1-bildene. Logikken ligger i `lib/plassholdere.js`, og bildene ligger i `src/plassholder/`.
