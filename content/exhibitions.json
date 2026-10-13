@@ -6,9 +6,175 @@
     "place": "",
     "period": "",
     "text": "",
-    "heroImage": "utstillinger/1-til-1-gyldenpris-kunsthall/utstillingsbilde-fjord.webp",
-    "heroAlt": "Stort blått maleri av en fjord mellom bratte fjell, montert på en frittstående vegg i et hvitt utstillingsrom",
-    "works": []
+    "heroImage": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-cover.webp",
+    "heroAlt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-01.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "1.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "2.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-03.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "3.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "4.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "5.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-07.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 6",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8396 2.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-08.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 7",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8400.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-09.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 8",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8404.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-10.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 9",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0961.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-11.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 10",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0962.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-12.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 11",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0845.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-13.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 12",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0838.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-14.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 13",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0835.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-15.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 14",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0668.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/1-til-1-gyldenpris-kunsthall/1-til-1-gyldenpris-kunsthall-16.webp",
+        "status": "",
+        "alt": "Fra utstillingen 1-til-1 Gyldenpris Kunsthall, bilde 15",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0750.jpeg"
+      }
+    ]
   },
   {
     "slug": "alt-mellom-himmel-og-jord",
@@ -17,9 +183,65 @@
     "place": "",
     "period": "",
     "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "heroImage": "utstillinger/alt-mellom-himmel-og-jord/alt-mellom-himmel-og-jord-cover.webp",
+    "heroAlt": "Fra utstillingen Alt mellom himmel og jord",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-mellom-himmel-og-jord/alt-mellom-himmel-og-jord-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt mellom himmel og jord, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8392.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-mellom-himmel-og-jord/alt-mellom-himmel-og-jord-03.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt mellom himmel og jord, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8394.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-mellom-himmel-og-jord/alt-mellom-himmel-og-jord-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt mellom himmel og jord, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8401.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-mellom-himmel-og-jord/alt-mellom-himmel-og-jord-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt mellom himmel og jord, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8393.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-mellom-himmel-og-jord/alt-mellom-himmel-og-jord-06.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt mellom himmel og jord, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8293.jpeg"
+      }
+    ]
   },
   {
     "slug": "varslipp",
@@ -28,9 +250,230 @@
     "place": "",
     "period": "",
     "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "heroImage": "utstillinger/varslipp/varslipp-cover.webp",
+    "heroAlt": "Fra utstillingen Vårslipp",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "FC031E9A-572A-4119-A1C0-A8550092C067.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-03.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "CEC60366-A3BA-453A-A9A3-EFA7F7C4A7B3.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "2A6BED6D-AE68-4947-9D74-4933A492C705.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "D6F3FACA-A929-4C02-9F64-239D5CD47BF2.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-06.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "0CED4929-8D14-4E11-A009-0B8DF618B857.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-07.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 6",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "13AF0369-B674-4169-8B91-4FEF5CCB4AB2.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-08.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 7",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "C8942721-140D-4AF2-8E68-8D02BDF14F06.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-09.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 8",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "8CE8E09E-D74A-46BD-8E71-C8801CA860F4.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-10.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 9",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "06916734-FE99-454C-A9F7-B57762BCA426.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-11.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 10",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "11F56C71-D94D-4CA8-A9A0-E9802C66DEAF.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-12.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 11",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "9079F419-E9A5-4E6A-A88D-5787719EE135.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-13.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 12",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "FF2809AF-5366-49A5-B821-B745B645B5BD.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-14.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 13",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "2F939CFE-CC42-4C2F-B81D-A31D17261F35.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-15.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 14",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "98F33B16-938E-4A54-81B5-5DFBC7E37EE8.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-16.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 15",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "6507AFBA-EE83-499D-9938-ACFACF9B89D4.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-17.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 16",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "3C20A6AE-0B9F-4BCE-AAEE-0CD4FED6A9AA.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-18.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 17",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "96C175B1-F303-4AD9-AE22-90712FE3DD1A.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-19.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 18",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "4DC83C43-2AE6-4469-8BF3-B389633AA2FA.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-20.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 19",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "9C68A6FE-C57D-4692-BB93-AE046577F31C.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/varslipp/varslipp-21.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vårslipp, bilde 20",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "B05B7DEE-876C-403A-B8D8-DC992FAAD71F.jpeg"
+      }
+    ]
   },
   {
     "slug": "alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler",
@@ -39,9 +482,241 @@
     "place": "",
     "period": "",
     "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "heroImage": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-cover.webp",
+    "heroAlt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-01.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "anita01stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "anita04stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "anita06stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "anita07stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-06.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "anita08stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-07.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 6",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3749stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-08.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 7",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3750stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-09.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 8",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3769stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-10.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 9",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3770stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-11.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 10",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3773stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-12.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 11",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3774stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-13.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 12",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3779stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-14.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 13",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3781stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-15.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 14",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3782stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-16.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 15",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3783stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-17.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 16",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3784stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-18.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 17",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3785stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-19.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 18",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3786stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-20.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 19",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3787stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-21.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 20",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3788stor.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/alt-jeg-ikke-ser-alt-jeg-ikke-vet-alt-jeg-ikke-foler/alt-jeg-ikke-ser-22.webp",
+        "status": "",
+        "alt": "Fra utstillingen Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler, bilde 21",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_3789stor.jpg"
+      }
+    ]
   },
   {
     "slug": "de-5-element",
@@ -50,9 +725,131 @@
     "place": "",
     "period": "",
     "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "heroImage": "utstillinger/de-5-element/de-5-elementer-cover.webp",
+    "heroAlt": "Fra utstillingen De 5 element",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-01.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "De 5 Element 2021 D.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "De 5 Element G.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-03.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "De 5 Element F.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "De 5 Element 2021 E.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-06.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "De 5 Element 2021 B-2.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-10.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 6",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8402-8.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-12.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 7",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8403-0.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-14.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 8",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8405-7.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-16.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 9",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8406-7.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-18.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 10",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8407-3.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/de-5-element/de-5-elementer-20.webp",
+        "status": "",
+        "alt": "Fra utstillingen De 5 element, bilde 11",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_8408-8.jpeg"
+      }
+    ]
   },
   {
     "slug": "vandreutstillinger",
@@ -61,9 +858,51 @@
     "place": "",
     "period": "",
     "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "heroImage": "utstillinger/vandreutstillinger/vandreutstilling-cover.webp",
+    "heroAlt": "Onsdag, olje. Fra utstillingen Vandreutstillinger",
+    "works": [
+      {
+        "title": "Mandag",
+        "technique": "Olje, gull, kobber og sølv",
+        "size": "233 × 144 cm",
+        "year": "",
+        "image": "utstillinger/vandreutstillinger/vandreutstilling-02.webp",
+        "status": "",
+        "alt": "Mandag, olje, gull, kobber og sølv. Fra utstillingen Vandreutstillinger",
+        "kilde": "Mandag, Olje, gull, kobber og sølv, 233-144cm-5.JPG"
+      },
+      {
+        "title": "Søndag",
+        "technique": "Olje, gull, sølv og kobber",
+        "size": "100 × 100",
+        "year": "",
+        "image": "utstillinger/vandreutstillinger/vandreutstilling-03.webp",
+        "status": "",
+        "alt": "Søndag, olje, gull, sølv og kobber. Fra utstillingen Vandreutstillinger",
+        "kilde": "Søndag, olje,gull,sølv og kobber, 100-100-4.jpg"
+      },
+      {
+        "title": "Fredag",
+        "technique": "Olje og gull",
+        "size": "40 × 50",
+        "year": "",
+        "image": "utstillinger/vandreutstillinger/vandreutstilling-04.webp",
+        "status": "",
+        "alt": "Fredag, olje og gull. Fra utstillingen Vandreutstillinger",
+        "kilde": "Fredag, olje og gull, 40-50-4.JPG"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/vandreutstillinger/vandreutstilling-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen Vandreutstillinger, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_3983-8.jpg"
+      }
+    ]
   },
   {
     "slug": "get-it-for-cheap",
@@ -72,9 +911,50 @@
     "place": "",
     "period": "",
     "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "heroImage": "utstillinger/get-it-for-cheap/get-it-for-cheap-cover.webp",
+    "heroAlt": "Apkolypse, midletidig, kritt og kull. Fra utstillingen Get it for cheap",
+    "works": [
+      {
+        "title": "Pakten",
+        "technique": "Kullstift",
+        "size": "A3",
+        "year": "",
+        "image": "utstillinger/get-it-for-cheap/get-it-for-cheap-02.webp",
+        "status": "",
+        "alt": "Pakten, kullstift. Fra utstillingen Get it for cheap",
+        "kilde": "Pakten, Kullstift A3-0.JPG"
+      },
+      {
+        "title": "Fibonacci",
+        "technique": "Akryl",
+        "size": "A4",
+        "year": "",
+        "image": "utstillinger/get-it-for-cheap/get-it-for-cheap-03.webp",
+        "status": "",
+        "alt": "Fibonacci, akryl. Fra utstillingen Get it for cheap",
+        "kilde": "Fibonacci, Akryl, A4-8.JPG"
+      },
+      {
+        "title": "H2O",
+        "technique": "Kullstift",
+        "size": "A3",
+        "year": "",
+        "image": "utstillinger/get-it-for-cheap/get-it-for-cheap-04.webp",
+        "status": "",
+        "alt": "H2O, kullstift. Fra utstillingen Get it for cheap",
+        "kilde": "H2O Kullstift, A3-0.JPG"
+      },
+      {
+        "title": "Måne og sol",
+        "technique": "Kritt",
+        "size": "A3",
+        "year": "",
+        "image": "utstillinger/get-it-for-cheap/get-it-for-cheap-05.webp",
+        "status": "",
+        "alt": "Måne og sol, kritt. Fra utstillingen Get it for cheap",
+        "kilde": "Måne og sol, Kritt A3-1.JPG"
+      }
+    ]
   },
   {
     "slug": "min-vei-til-master",
@@ -83,9 +963,81 @@
     "place": "",
     "period": "",
     "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "heroImage": "utstillinger/min-vei-til-master/min-vei-til-master-cover.webp",
+    "heroAlt": "Morgensol, olje. Fra utstillingen Min vei til master",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/min-vei-til-master/min-vei-til-master-01.webp",
+        "status": "",
+        "alt": "Fra utstillingen Min vei til master, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_20200211_153552-7.jpg"
+      },
+      {
+        "title": "AL2SIO5",
+        "technique": "Olje og gull",
+        "size": "100 × 90 cm",
+        "year": "",
+        "image": "utstillinger/min-vei-til-master/min-vei-til-master-02.webp",
+        "status": "",
+        "alt": "AL2SIO5, olje og gull. Fra utstillingen Min vei til master",
+        "kilde": "AL2SIO5, Olje og gull, 100-90cm-8.JPG"
+      },
+      {
+        "title": "Ballerina 1",
+        "technique": "Olje",
+        "size": "50 × 60",
+        "year": "",
+        "image": "utstillinger/min-vei-til-master/min-vei-til-master-03.webp",
+        "status": "",
+        "alt": "Ballerina 1, olje. Fra utstillingen Min vei til master",
+        "kilde": "Ballerina 1, Olje, 50-60-3.JPG"
+      },
+      {
+        "title": "Ballerina",
+        "technique": "Olje",
+        "size": "50 × 60",
+        "year": "",
+        "image": "utstillinger/min-vei-til-master/min-vei-til-master-04.webp",
+        "status": "",
+        "alt": "Ballerina, olje. Fra utstillingen Min vei til master",
+        "kilde": "Ballerina, Olje, 50-60-2.JPG"
+      },
+      {
+        "title": "En fjord",
+        "technique": "",
+        "size": "233 × 144",
+        "year": "",
+        "image": "utstillinger/min-vei-til-master/min-vei-til-master-05.webp",
+        "status": "",
+        "alt": "En fjord. Fra utstillingen Min vei til master",
+        "kilde": "En fjord, --, 233-144-0.JPG"
+      },
+      {
+        "title": "Kyanitt",
+        "technique": "Olje og gull",
+        "size": "100 × 90 cm",
+        "year": "",
+        "image": "utstillinger/min-vei-til-master/min-vei-til-master-06.webp",
+        "status": "",
+        "alt": "Kyanitt, olje og gull. Fra utstillingen Min vei til master",
+        "kilde": "Kyanitt, Olje og gull. 100-90cm-4.JPG"
+      },
+      {
+        "title": "Piano",
+        "technique": "Olje",
+        "size": "50 × 60",
+        "year": "",
+        "image": "utstillinger/min-vei-til-master/min-vei-til-master-07.webp",
+        "status": "",
+        "alt": "Piano, olje. Fra utstillingen Min vei til master",
+        "kilde": "Piano, Olje, 50-60-8.JPG"
+      }
+    ]
   },
   {
     "slug": "masterutstilling-2018",
@@ -93,10 +1045,163 @@
     "year": "2018",
     "place": "",
     "period": "",
-    "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "text": "Våren 2018 var mine arbeid en del av masterutstillingen \"F_r_i_d_a_y the 13th\". Jeg stilte ut 4 forskjellige arbeid med titlene \"berørt\"- \"Urørt\"- \"Lille Lungegård vann\"-\"Vågen\".",
+    "heroImage": "utstillinger/masterutstilling-2018/masterutstilling-2018-cover.webp",
+    "heroAlt": "Fra utstillingen Masterutstilling 2018",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-01.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0964-5.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0970-8.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-03.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0972-5.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0030-5.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0034-6.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-06.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 6",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0040-4.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-07.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 7",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0033-2.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-08.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 8",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0060-7.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-09.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 9",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0984-9.jpg"
+      },
+      {
+        "title": "Vågen",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-10.webp",
+        "status": "",
+        "alt": "Vågen. Fra utstillingen Masterutstilling 2018",
+        "kilde": "vågen DSC_0101.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-11.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 11",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0968.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-12.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 12",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_2640.jpeg"
+      },
+      {
+        "title": "Lille Lungegård vann",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-13.webp",
+        "status": "",
+        "alt": "Lille Lungegård vann. Fra utstillingen Masterutstilling 2018",
+        "kilde": "lille lungegårsvannDSC_0100.jpeg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/masterutstilling-2018/masterutstilling-2018-14.webp",
+        "status": "",
+        "alt": "Fra utstillingen Masterutstilling 2018, bilde 14",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "FORSIDE MASTERUTSTILLING.jpeg"
+      }
+    ]
   },
   {
     "slug": "khib-og-uib",
@@ -104,10 +1209,176 @@
     "year": "",
     "place": "",
     "period": "",
-    "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "text": "Igjennom mine fem år på KhiB og UiB har jeg laget flere arbeid som er inspirert av naturen og naturens forandringer.",
+    "heroImage": "utstillinger/khib-og-uib/dyreriket-cover.webp",
+    "heroAlt": "Fra utstillingen KHIB og UIB",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-01.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0419.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0533.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-03.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0486.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0504.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0524.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-06.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 6",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0664.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-07.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 7",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0685.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-08.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 8",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0707.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-09.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 9",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0752.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-10.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 10",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0761.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-11.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 11",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0768.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-12.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 12",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0783.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-13.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 13",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0973.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-15.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 14",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_1111-8.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/khib-og-uib/dyreriket-16.webp",
+        "status": "",
+        "alt": "Fra utstillingen KHIB og UIB, bilde 15",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0868.jpg"
+      }
+    ]
   },
   {
     "slug": "bachelorutstilling-2016",
@@ -115,10 +1386,143 @@
     "year": "2016",
     "place": "",
     "period": "",
-    "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "text": "Våren 2016 var mitt arbeid en del av bachelorustillingen \"m.o.n.o.n.o.a.w.a.r.e\" i Lille lungegårdsvann.",
+    "heroImage": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-cover.webp",
+    "heroAlt": "Fra utstillingen Bachelorutstilling 2016",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-01.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_1606.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_1615.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-03.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0004.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0006.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0044.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-06.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 6",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0051.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-07.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 7",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_1616.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-08.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 8",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_1619.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-09.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 9",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_1644.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-10.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 10",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0112.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-11.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 11",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0313.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/bachelorutstilling-2016/midt-i-jungelen-12.webp",
+        "status": "",
+        "alt": "Fra utstillingen Bachelorutstilling 2016, bilde 12",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_2447.jpg"
+      }
+    ]
   },
   {
     "slug": "luftskipet",
@@ -126,9 +1530,76 @@
     "year": "",
     "place": "",
     "period": "",
-    "text": "",
-    "heroImage": "",
-    "heroAlt": "",
-    "works": []
+    "text": "Igjennom mine studier hadde jeg og galleri Luftskipet en avtale om å vise min framgang igjennom kunststudiene.",
+    "heroImage": "utstillinger/luftskipet/hostfarger-cover.webp",
+    "heroAlt": "Fra utstillingen Luftskipet",
+    "works": [
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/luftskipet/hostfarger-01.webp",
+        "status": "",
+        "alt": "Fra utstillingen Luftskipet, bilde 1",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0420.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/luftskipet/hostfarger-02.webp",
+        "status": "",
+        "alt": "Fra utstillingen Luftskipet, bilde 2",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0437.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/luftskipet/hostfarger-03.webp",
+        "status": "",
+        "alt": "Fra utstillingen Luftskipet, bilde 3",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0451.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/luftskipet/hostfarger-04.webp",
+        "status": "",
+        "alt": "Fra utstillingen Luftskipet, bilde 4",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0456.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/luftskipet/hostfarger-05.webp",
+        "status": "",
+        "alt": "Fra utstillingen Luftskipet, bilde 5",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "DSC_0462.jpg"
+      },
+      {
+        "title": "",
+        "technique": "",
+        "size": "",
+        "year": "",
+        "image": "utstillinger/luftskipet/hostfarger-06.webp",
+        "status": "",
+        "alt": "Fra utstillingen Luftskipet, bilde 6",
+        "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
+        "kilde": "IMG_0969.jpg"
+      }
+    ]
   }
 ]
