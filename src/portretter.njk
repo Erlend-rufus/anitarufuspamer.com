@@ -1,8 +1,60 @@
 ---
 layout: base.njk
 title: Portretter
+description: Portretter av billedkunstner Anita Rufus Pamer.
 permalink: /portretter/
+inquiryDefault: Portretter
 ---
-<section style="padding: var(--section-y) var(--gutter);">
-  <h1 style="margin:0;font-family:var(--serif);font-weight:400;font-size:var(--fs-h1-portraits);line-height:.95;letter-spacing:-.035em;">Portretter</h1>
+{%- set items = portraits | selectattr("image") %}
+<section class="pt-top">
+  <div class="pt-top__left">
+    <a class="back-link back-link--muted" href="/">← Forside</a>
+    <h1 class="pt-title">Portretter</h1>
+  </div>
+  {%- if site.portraitsText or items.length %}
+  <div class="pt-top__right">
+    {%- if site.portraitsText %}<p>{{ site.portraitsText }}</p>{% endif %}
+    {%- if items.length %}<span class="pt-count">{{ items.length }} portrett{{ "er" if items.length != 1 }}</span>{% endif %}
+  </div>
+  {%- endif %}
 </section>
+
+{%- if items.length %}
+<section class="pt-gallery">
+  <div class="pt-grid">
+    {%- for p in items %}
+    {%- set m = [p.technique, p.size, p.year] | meta %}
+    <figure class="pt-item" id="portrett-{{ loop.index }}">
+      <button class="pt-item__open frame frame--{{ 'a' if loop.index0 % 2 == 0 else 'b' }}" type="button" data-lightbox-open="{{ loop.index0 }}" aria-label="Vis {{ p.title or ('portrett ' + loop.index) }} stort">
+        {% bilde p.image, p.alt, "(min-width: 900px) 33vw, 50vw" %}
+      </button>
+      {%- if p.title or m %}
+      <figcaption>{% if p.title %}<span class="pt-item__title">{{ p.title }}</span>{% endif %}{% if m %}<span class="pt-item__meta">{{ m }}</span>{% endif %}</figcaption>
+      {%- endif %}
+    </figure>
+    {%- endfor %}
+  </div>
+</section>
+
+<dialog class="lightbox" aria-label="Portrett" data-lightbox>
+  {%- for p in items %}
+  {%- set m = [p.technique, p.size, p.year] | meta %}
+  <div class="lightbox__slide" data-slide hidden>
+    <div class="lightbox__img">{% bilde p.image, p.alt, "(min-width: 900px) 60vw, 100vw" %}</div>
+    <div class="lightbox__text">
+      <span class="lightbox__num">{{ loop.index | pad2 }} / {{ items.length | pad2 }}</span>
+      {%- if p.title %}<span class="lightbox__title">{{ p.title }}</span>{% endif %}
+      {%- if m %}<span class="lightbox__meta">{{ m }}</span>{% endif %}
+      <button class="btn btn--solid" type="button" data-inquire="{{ (p.title or ('Portrett ' + loop.index)) + ' — Portretter' }}">Forespør verket</button>
+      <div class="lightbox__nav">
+        <button type="button" data-lightbox-step="-1">← Forrige</button>
+        <button type="button" data-lightbox-step="1">Neste →</button>
+        <button type="button" class="lightbox__close" data-lightbox-close>Lukk ✕</button>
+      </div>
+    </div>
+  </div>
+  {%- endfor %}
+</dialog>
+{%- endif %}
+
+{% include "partials/foresporsel.njk" %}

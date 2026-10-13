@@ -1,0 +1,16 @@
+<section class="inquiry" id="foresporsel">
+  <div class="inquiry__intro">
+    <h2 class="inquiry__title">Forespørsel</h2>
+    {%- if site.inquiryText %}<p>{{ site.inquiryText }}</p>{% endif %}
+  </div>
+  <form class="inquiry__form" name="foresporsel" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-inquiry-form novalidate>
+    <input type="hidden" name="form-name" value="foresporsel">
+    <p class="visually-hidden"><label>Ikke fyll ut dette feltet: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <label class="field">Gjelder verk<input name="verk" value="{{ inquiryDefault }}" readonly data-inquiry-work></label>
+    <label class="field">Navn<input name="navn" autocomplete="name" required></label>
+    <label class="field">E-post<input name="e-post" type="email" autocomplete="email" required></label>
+    <label class="field">Melding<textarea name="melding" rows="3"></textarea></label>
+    <p class="inquiry__error" role="alert" data-inquiry-error hidden></p>
+    <button class="btn btn--submit" type="submit" data-inquiry-submit>Send</button>
+  </form>
+</section>
