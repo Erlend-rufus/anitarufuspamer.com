@@ -62,6 +62,12 @@ Bildestier i `content/*.json` er relative til `images/` (f.eks. `utstillinger/va
 
 **Ny side eller seksjon.** Spør først. Siden skal holde seg enkel.
 
+## Innhold hentet fra den gamle siden
+Bildene og tekstene fra Webnode ble importert med `migrering/importer-scrape.py` (se `docs` i handoff fra scraperen).
+- Verk har feltet `kilde` (originalt filnavn på Webnode) for sporbarhet.
+- Verk med `"todo"` mangler tittel, teknikk, mål og ordentlig alt-tekst. Fyll inn når Anita leverer, og fjern `todo`.
+- Bildene fra den gamle forsiden (25 enkeltverk) er ikke importert ennå, fordi det ikke er avklart hva de skal brukes til.
+
 ## Plassholdere
 `"plassholdere": true` i `content/site.json` fyller tomme felt og seksjoner med plassholderne fra designprototypen: «Verktittel I», «Teknikk · mål · år», «Tekst om utstillingen kommer.», Sted/Periode «—», 9 portretter, 6 eksempelinnlegg på Instagram, «Portrett av Anita», og utsnitt av de tre 1-til-1-bildene. Logikken ligger i `lib/plassholdere.js`, og bildene ligger i `src/plassholder/`.
 - Ekte innhold går alltid foran. Et felt fylles bare når det er tomt, og en utstilling får plassholderverk bare når `works` er tom.

@@ -60,6 +60,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("meta", (parts) => (parts || []).filter(Boolean).join(" · "));
   eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
 
+  // Myke bindestreker i lange sammensatte ord («Master-utstil-ling»), så store overskrifter kan deles pent.
+  eleventyConfig.addFilter("myk", (s) =>
+    String(s || "").replace(/(\p{L}{4,})(utstil)(ling)/giu, "$1\u00AD$2\u00AD$3"));
+  // Lengste ord i en tittel (brukes til å velge mindre overskrift for svært lange ord).
+  eleventyConfig.addFilter("longestWord", (s) => Math.max(0, ...String(s || "").split(/\s+/).map((w) => w.length)));
+
   eleventyConfig.addFilter("depth", (m) => (m ? `−${m} m` : "0 m"));
 
   return {
