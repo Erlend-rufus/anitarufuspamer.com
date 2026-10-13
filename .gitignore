@@ -4,3 +4,4 @@ _site/
 .netlify/
 migrering/scrape-output/
 .env
+__pycache__/
