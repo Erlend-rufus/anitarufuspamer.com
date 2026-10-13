@@ -18,9 +18,10 @@ Eleventy 3 med Nunjucks-maler. Ingen rammeverk, ingen bundler.
 
 ```
 content/
-  site.json            kontaktinfo, Instagram-brukernavn, Om meg, tre forsidebilder (heroWorks)
+  site.json            kontaktinfo, Instagram-brukernavn, utsagn, Om meg, tekster, forsidebilder (heroWorks)
   exhibitions.json     alle utstillinger, nyest først
   portraits.json       portretter
+  instagram-reserve.json  siste kjente Instagram-svar, brukes hvis Instagram ikke svarer
 images/
   utstillinger/<slug>/ bilder per utstilling
   portretter/          portrettbilder
@@ -47,11 +48,15 @@ Bildestier i `content/*.json` er relative til `images/` (f.eks. `utstillinger/va
 
 **Ny utstilling.** Legg en ny oppføring øverst i `content/exhibitions.json` med `slug` (små bokstaver, ASCII, bindestrek), `title`, `year`, `place`, `period`, `text`, `heroImage`, `heroAlt` og `works`. Legg bildene i `images/utstillinger/<slug>/`. Dybdemålet i listen («−8 m» osv.) og nummereringen beregnes automatisk fra rekkefølgen. Ikke skriv det inn for hånd.
 
-**Nytt verk i en utstilling.** Legg til i `works` for den utstillingen: `title`, `technique`, `size`, `year`, `image`, `alt`, `status`. Tomme felt skal ikke vises på siden.
+**Nytt verk i en utstilling.** Legg til i `works` for den utstillingen: `title`, `technique`, `size`, `year`, `image`, `alt`, `status`. Tomme felt skal ikke vises på siden. Verk uten `image` vises ikke.
 
-**Nytt portrett.** Legg bildet i `images/portretter/` og en oppføring i `content/portraits.json`.
+**Nytt portrett.** Legg bildet i `images/portretter/` og en oppføring i `content/portraits.json` (`title`, `technique`, `size`, `year`, `image`, `alt`). Portrettseksjonen på forsiden vises når det finnes minst ett portrett.
 
-**Bytte hovedbildene på forsiden.** Tre verk i `content/site.json` under `heroWorks` (bilde, tittel, teknikk, mål, år).
+**Bytte hovedbildene på forsiden.** Tre verk i `content/site.json` under `heroWorks` (`image`, `alt`, `title`, `technique`, `size`, `year`). Nå ligger tre installasjonsbilder fra 1-til-1 der, uten titler.
+
+**Portrett av Anita (Om meg).** Legg bildet i `images/om-meg/` og sett `about.portrait` og `about.portraitAlt` i `content/site.json`.
+
+**Instagram.** Sett `instagram` i `content/site.json` (f.eks. `"@anitarufuspamer"`). Seksjonen vises først når funksjonen `netlify/functions/instagram.js` returnerer innlegg, altså når `INSTAGRAM_TOKEN` er satt i Netlify. Nøkkelen varer ca. 60 dager og må fornyes (se kommentaren øverst i funksjonen).
 
 **Endre tekst, telefon, e-post eller Instagram-brukernavn.** Se `content/site.json`. Endre ordene eksakt slik brukeren ber om, uten å omformulere.
 
