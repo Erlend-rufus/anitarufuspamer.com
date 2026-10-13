@@ -1,0 +1,6 @@
+node_modules/
+_site/
+.cache/
+.netlify/
+migrering/scrape-output/
+.env
