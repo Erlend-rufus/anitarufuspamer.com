@@ -24,9 +24,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addAsyncShortcode("bilde", async (src, alt = "", sizes = "100vw", opts = {}) => {
     if (!src) return "";
     const meta = await Image(path.join("images", src), {
-      widths: [480, 960, 1600, 2400],
+      widths: [480, 960, 1600, "auto"], // "auto" = originalen (maks 2400 px)
       formats: ["webp"],
-      outputDir: "_site/img/",
+      outputDir: path.join(eleventyConfig.directories.output, "img"),
       urlPath: "/img/",
     });
     return Image.generateHTML(meta, {
@@ -38,6 +38,22 @@ export default function (eleventyConfig) {
       ...(opts.class ? { class: opts.class } : {}),
     });
   });
+
+  // Delingsbilde (Open Graph): én JPEG, 1200 px bred. Returnerer stien.
+  eleventyConfig.addAsyncShortcode("ogbilde", async (src) => {
+    if (!src) return "";
+    const meta = await Image(path.join("images", src), {
+      widths: [1200],
+      formats: ["jpeg"],
+      outputDir: path.join(eleventyConfig.directories.output, "img"),
+      urlPath: "/img/",
+    });
+    return meta.jpeg[0].url;
+  });
+
+  // «Teknikk · mål · år» uten tomme felt.
+  eleventyConfig.addFilter("meta", (parts) => (parts || []).filter(Boolean).join(" · "));
+  eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
 
   eleventyConfig.addFilter("depth", (m) => (m ? `−${m} m` : "0 m"));
 
