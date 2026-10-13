@@ -8,8 +8,8 @@ Tekst på siden er norsk (bokmål). Svar til brukeren på norsk. Skriv enkelt, b
 1. Gjør endringen. Endre bare det som er bedt om.
 2. Kjør `npm run build` og sjekk at siden bygger uten feil (`npm start` gir lokal forhåndsvisning).
 3. Vis brukeren hva som er endret (kort liste, gjerne skjermbilde).
-4. Commit med en kort norsk melding (f.eks. «Ny utstilling: Vårslipp 2026») og push til `main`.
-5. Netlify publiserer. Si fra at endringen er ute om ca. ett minutt.
+4. Commit med en kort norsk melding (f.eks. «Ny utstilling: Vårslipp 2026»). Jobber du på en egen gren, lag en PR mot `main`. Brukeren har gitt varig lov til å merge, så merge PR-en når bygget er grønt, uten å spørre.
+5. Netlify publiserer fra `main` (prosjektet «anitarufuspamercom»). Si fra at endringen er ute om et par minutter.
 
 Aldri commit hemmeligheter. `INSTAGRAM_TOKEN` ligger som miljøvariabel i Netlify.
 
