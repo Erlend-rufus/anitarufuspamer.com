@@ -1,0 +1,67 @@
+---
+layout: base.njk
+bodyClass: exh
+pagination:
+  data: exhibitions
+  size: 1
+  alias: ex
+permalink: "/utstillinger/{{ ex.slug }}/"
+eleventyComputed:
+  title: "{{ ex.title }}"
+  description: "{{ ex.text | truncate(155) if ex.text else ex.title + ' – utstilling av billedkunstner Anita Rufus Pamer.' }}"
+  ogSrc: "{{ ex.heroImage }}"
+  inquiryDefault: "{{ ex.title }}"
+---
+{%- set works = ex.works | selectattr("image") %}
+<section class="exh-top">
+  <div class="exh-top__left">
+    <a class="back-link" href="/#utstillinger">← Alle utstillinger</a>
+    <h1 class="exh-title{% if ex.title.length > 30 %} exh-title--long{% endif %}">{{ ex.title }}</h1>
+  </div>
+  {%- if ex.place or ex.period or works.length or ex.text %}
+  <div class="exh-top__right">
+    {%- if ex.place or ex.period or works.length %}
+    <dl class="facts">
+      {%- if ex.place %}<dt>Sted</dt><dd>{{ ex.place }}</dd>{% endif %}
+      {%- if ex.period %}<dt>Periode</dt><dd>{{ ex.period }}</dd>{% endif %}
+      {%- if works.length %}<dt>Verk</dt><dd>{{ works.length }}</dd>{% endif %}
+    </dl>
+    {%- endif %}
+    {%- if ex.text %}
+    <div class="exh-text">{% for para in ex.text.split("\n\n") %}<p>{{ para }}</p>{% endfor %}</div>
+    {%- endif %}
+  </div>
+  {%- endif %}
+</section>
+
+{%- if ex.heroImage %}
+<figure class="exh-hero">
+  <div class="exh-hero__img">{% bilde ex.heroImage, ex.heroAlt, "100vw", { eager: true } %}</div>
+  <figcaption class="exh-hero__cap"><span>Utstillingsbilde</span><span>Lag 0 · 0 m</span></figcaption>
+</figure>
+{%- endif %}
+
+{%- set widths = [520, 760, 600] %}
+{%- for w in works %}
+{%- set m = [w.technique, w.size, w.year] %}
+<section class="work{% if loop.index0 % 2 %} work--reverse{% endif %}" aria-label="{{ w.title or ('Verk ' + loop.index) }}">
+  <div class="work__rule label"><span class="work__depth">−{{ 24 * loop.index }} m</span><span class="work__layer">Lag {{ loop.index }}</span></div>
+  <div class="work__body">
+    <div class="work__img" style="width: {{ widths[loop.index0 % 3] }}px">{% bilde w.image, w.alt, "(min-width: 900px) " + widths[loop.index0 % 3] + "px, 100vw" %}</div>
+    <div class="work__text">
+      {%- if w.title %}<span class="work__title">{{ w.title }}</span>{% endif %}
+      {%- if w.technique or w.size or w.year %}
+      <span class="work__meta">{% for x in m %}{% if x %}{{ x }}<br>{% endif %}{% endfor %}</span>
+      {%- endif %}
+      <button class="btn btn--outline" type="button" data-inquire="{{ (w.title or ('Verk ' + loop.index)) + ' — ' + ex.title }}">Forespør verket</button>
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+<nav class="prevnext" aria-label="Andre utstillinger">
+  <a href="{{ ex.prev.url }}" rel="prev"><span class="prevnext__label">Forrige</span><span class="prevnext__title">{{ ex.prev.title }}</span></a>
+  <a href="{{ ex.next.url }}" rel="next" class="prevnext__next"><span class="prevnext__label">Neste</span><span class="prevnext__title">{{ ex.next.title }}</span></a>
+</nav>
+
+{% include "partials/foresporsel.njk" %}
