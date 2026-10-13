@@ -18,5 +18,30 @@
   },
   "portraitsText": "",
   "inquiryText": "Dersom dette vekket interessen din, ta kontakt ved bruk av skjemaet under!",
-  "heroWorks": []
+  "heroWorks": [
+    {
+      "image": "forside/1-til-1-fjord.webp",
+      "alt": "Stort blått maleri av en fjord mellom bratte fjell, montert på en frittstående vegg i et hvitt utstillingsrom, med en skulptur av kobberbånd på gulvet",
+      "title": "",
+      "technique": "",
+      "size": "",
+      "year": ""
+    },
+    {
+      "image": "forside/1-til-1-vindu.webp",
+      "alt": "Gult og grønt maleri hengt foran et vindu, et oransje tøystykke som henger fra taket og en spiral av fargede metallbånd på gulvet",
+      "title": "",
+      "technique": "",
+      "size": "",
+      "year": ""
+    },
+    {
+      "image": "forside/1-til-1-gul-vegg.webp",
+      "alt": "Gul vegg med en tekstilskulptur og kobberlister, et maleri foran vinduet og en lang spiral av fargede metallbånd på gulvet",
+      "title": "",
+      "technique": "",
+      "size": "",
+      "year": ""
+    }
+  ]
 }
