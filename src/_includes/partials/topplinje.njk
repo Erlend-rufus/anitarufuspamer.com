@@ -1,0 +1,21 @@
+{%- set nav = [
+  ["Forside", "/"],
+  ["Utstillinger", "/#utstillinger"],
+  ["Portretter", "/portretter/"],
+  ["Om meg", "/#om"],
+  ["Kontakt", "#kontakt"]
+] %}
+<header class="topbar">
+  <a class="topbar__logo" href="/">{{ site.name }}</a>
+  <nav class="topbar__nav" aria-label="Hovedmeny">
+    {%- for item in nav %}
+    <a href="{{ item[1] }}"{% if item[1] == page.url %} aria-current="page"{% endif %}>{{ item[0] }}</a>
+    {%- endfor %}
+  </nav>
+  <button class="topbar__toggle" type="button" aria-expanded="false" aria-controls="meny">Meny</button>
+</header>
+<nav class="menu-panel" id="meny" aria-label="Meny" hidden>
+  {%- for item in nav %}
+  <a href="{{ item[1] }}"{% if item[1] == page.url %} aria-current="page"{% endif %}>{{ item[0] }}</a>
+  {%- endfor %}
+</nav>

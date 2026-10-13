@@ -1,0 +1,114 @@
+/* ---------- Grunnlag ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--scroll-offset); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--muted); }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: fixed; top: 8px; left: 8px; z-index: 60;
+  background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 14px;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: none; color: var(--paper); }
+.label { font-size: var(--fs-label); letter-spacing: var(--ls-label); text-transform: uppercase; }
+
+/* ---------- Topplinje ---------- */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+  height: var(--header-h);
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 0 clamp(16px, 3vw, 40px);
+  background: var(--paper); color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.topbar__logo { font-size: var(--fs-logo); white-space: nowrap; color: var(--ink); }
+.topbar__nav { display: flex; gap: clamp(14px, 2.2vw, 32px); font-size: var(--fs-nav); }
+.topbar__nav a { color: var(--ink); }
+.topbar__nav a:hover, .topbar__logo:hover { color: var(--muted); }
+.topbar__toggle {
+  display: none;
+  background: transparent; border: 1px solid var(--ink); color: var(--ink);
+  padding: 9px 18px; font: 400 13px var(--sans); letter-spacing: .06em; cursor: pointer;
+}
+.menu-panel {
+  position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 38;
+  display: flex; flex-direction: column;
+  padding: 8px clamp(20px, 4vw, 40px) 20px;
+  background: var(--paper); border-bottom: 1px solid var(--line);
+}
+.menu-panel[hidden] { display: none; }
+.menu-panel a {
+  padding: 16px 0; border-top: 1px solid var(--line);
+  font-family: var(--serif); font-size: 22px; color: var(--ink);
+}
+@media (max-width: 859.98px) {
+  .topbar__nav { display: none; }
+  .topbar__toggle { display: block; }
+}
+@media (min-width: 860px) {
+  .menu-panel { display: none !important; }
+}
+
+/* ---------- Dybdemål ---------- */
+.gauge { display: none; }
+@media (min-width: 900px) {
+  .gauge {
+    display: block;
+    position: fixed; left: 0; top: var(--header-h); bottom: 0; z-index: 39;
+    width: var(--gauge-w);
+    background: var(--paper); border-right: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .gauge__axis { position: absolute; left: 58px; top: 24px; bottom: 24px; width: 1px; background: var(--ink); }
+  .gauge__ticks {
+    position: absolute; left: 59px; top: 24px; bottom: 24px; width: 8px;
+    background: repeating-linear-gradient(to bottom, var(--ink) 0, var(--ink) 1px, transparent 1px, transparent 17px);
+  }
+  .gauge__marker {
+    position: absolute; left: 0; width: 58px; height: 14px;
+    top: calc(24px + var(--p, 0) * (100% - 48px) - 7px);
+    display: flex; align-items: center; justify-content: flex-end; gap: 3px;
+    font-size: 10.5px; font-variant-numeric: tabular-nums;
+  }
+  .gauge__marker::after { content: ""; width: 12px; height: 2px; background: var(--ink); }
+}
+
+/* ---------- Sideflate ---------- */
+.page {
+  min-height: 100vh;
+  padding-top: var(--header-h);
+  background: var(--page-bg, var(--paper));
+  color: var(--page-fg, var(--ink));
+}
+@media (min-width: 900px) {
+  .page { margin-left: var(--gauge-w); }
+}
+
+/* ---------- Footer (lys) ---------- */
+.footer {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 28px;
+  padding: 32px var(--gutter) 40px;
+  font-size: 14px; font-weight: 300;
+}
+.footer__links { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer a { color: inherit; }
+.footer a:hover { color: inherit; opacity: .7; }
+
+/* ---------- Redusert bevegelse ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .gauge__marker { display: none; }
+  *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
+}

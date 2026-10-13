@@ -1,0 +1,13 @@
+---
+layout: base.njk
+pagination:
+  data: exhibitions
+  size: 1
+  alias: ex
+permalink: "/utstillinger/{{ ex.slug }}/"
+eleventyComputed:
+  title: "{{ ex.title }}"
+---
+<section style="padding: var(--section-y) var(--gutter);">
+  <h1 style="margin:0;font-family:var(--serif);font-weight:700;font-size:{{ 'var(--fs-h1-exh-long)' if ex.title.length > 30 else 'var(--fs-h1-exh)' }};line-height:1;letter-spacing:-.025em;">{{ ex.title }}</h1>
+</section>
