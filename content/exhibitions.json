@@ -902,7 +902,8 @@
         "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
         "kilde": "IMG_3983-8.jpg"
       }
-    ]
+    ],
+    "titleEn": "Touring exhibitions"
   },
   {
     "slug": "get-it-for-cheap",
@@ -1037,7 +1038,8 @@
         "alt": "Piano, olje. Fra utstillingen Min vei til master",
         "kilde": "Piano, Olje, 50-60-8.JPG"
       }
-    ]
+    ],
+    "titleEn": "My path to a master's degree"
   },
   {
     "slug": "masterutstilling-2018",
@@ -1201,7 +1203,9 @@
         "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
         "kilde": "FORSIDE MASTERUTSTILLING.jpeg"
       }
-    ]
+    ],
+    "titleEn": "Master's exhibition 2018",
+    "textEn": "In spring 2018 my works were part of the master's exhibition \"F_r_i_d_a_y the 13th\". I exhibited four different works titled \"berørt\" - \"Urørt\" - \"Lille Lungegård vann\" - \"Vågen\"."
   },
   {
     "slug": "khib-og-uib",
@@ -1378,7 +1382,8 @@
         "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
         "kilde": "IMG_0868.jpg"
       }
-    ]
+    ],
+    "textEn": "During my five years at KhiB and UiB I have made several works inspired by nature and its changes."
   },
   {
     "slug": "bachelorutstilling-2016",
@@ -1522,7 +1527,9 @@
         "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
         "kilde": "IMG_2447.jpg"
       }
-    ]
+    ],
+    "titleEn": "Bachelor's exhibition 2016",
+    "textEn": "In spring 2016 my work was part of the bachelor's exhibition \"m.o.n.o.n.o.a.w.a.r.e\" at Lille Lungegårdsvann."
   },
   {
     "slug": "luftskipet",
@@ -1600,6 +1607,7 @@
         "todo": "Verkstittel, teknikk, mål og alt-tekst mangler",
         "kilde": "IMG_0969.jpg"
       }
-    ]
+    ],
+    "textEn": "Throughout my studies, Galleri Luftskipet and I had an agreement to show my progress through my art studies."
   }
 ]

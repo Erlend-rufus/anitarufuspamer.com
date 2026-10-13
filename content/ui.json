@@ -1,0 +1,82 @@
+{
+  "no": {
+    "htmlLang": "nb", "ogLocale": "nb_NO", "skip": "Hopp til innhold",
+    "paths": { "home": "/", "portraits": "/portretter/" },
+    "switch": { "label": "EN", "title": "English", "lang": "en", "aria": "Switch to English" },
+    "nav": [
+      { "label": "Forside", "href": "/" },
+      { "label": "Utstillinger", "href": "/#utstillinger" },
+      { "label": "Portretter", "href": "/portretter/" },
+      { "label": "Om meg", "href": "/#om" },
+      { "label": "Kontakt", "href": "#kontakt" }
+    ],
+    "navAria": "Hovedmeny", "menuAria": "Meny", "menu": "Meny", "menuClose": "Lukk",
+    "home": {
+      "heroAria": "Utvalgte verk", "scroll": "Scroll ↓", "exhibitions": "Utstillinger",
+      "layersNote": "{n} lag · nyest øverst", "portraits": "Portretter", "seeAll": "Se alle portretter →",
+      "instagram": "Instagram", "igFollow": "Følg på Instagram →",
+      "igNote": "Forhåndsvisning med eksempelinnlegg. På den ferdige siden hentes de seks siste innleggene automatisk fra Instagram.",
+      "about": "Om meg · berggrunn"
+    },
+    "exh": {
+      "back": "← Alle utstillinger", "place": "Sted", "period": "Periode", "works": "Verk",
+      "view": "Utstillingsbilde", "layer0": "Lag 0 · 0 m", "layer": "Lag", "enquire": "Forespør verket",
+      "prev": "Forrige", "next": "Neste", "otherNav": "Andre utstillinger", "workFallback": "Verk",
+      "descFallback": "{t} – utstilling av billedkunstner Anita Rufus Pamer."
+    },
+    "portraits": {
+      "title": "Portretter", "back": "← Forside", "count1": "{n} portrett", "countN": "{n} portretter",
+      "showLarge": "Vis {t} stort", "fallback": "Portrett", "dialog": "Portrett",
+      "prev": "← Forrige", "next": "Neste →", "close": "Lukk ✕",
+      "description": "Portretter av billedkunstner Anita Rufus Pamer."
+    },
+    "inquiry": {
+      "title": "Forespørsel", "work": "Gjelder verk", "name": "Navn", "email": "E-post", "message": "Melding",
+      "send": "Send", "honeypot": "Ikke fyll ut dette feltet:"
+    },
+    "js": {
+      "sent": "Takk — sendt", "errName": "Skriv inn navnet ditt.", "errEmail": "Skriv inn en gyldig e-postadresse.",
+      "errSend": "Beklager, meldingen ble ikke sendt. Prøv igjen litt senere.", "igAlt": "Innlegg på Instagram", "locale": "nb-NO"
+    }
+  },
+  "en": {
+    "htmlLang": "en", "ogLocale": "en_US", "skip": "Skip to content",
+    "paths": { "home": "/en/", "portraits": "/en/portraits/" },
+    "switch": { "label": "NO", "title": "Norsk", "lang": "nb", "aria": "Bytt til norsk" },
+    "nav": [
+      { "label": "Home", "href": "/en/" },
+      { "label": "Exhibitions", "href": "/en/#utstillinger" },
+      { "label": "Portraits", "href": "/en/portraits/" },
+      { "label": "About", "href": "/en/#om" },
+      { "label": "Contact", "href": "#kontakt" }
+    ],
+    "navAria": "Main menu", "menuAria": "Menu", "menu": "Menu", "menuClose": "Close",
+    "home": {
+      "heroAria": "Selected works", "scroll": "Scroll ↓", "exhibitions": "Exhibitions",
+      "layersNote": "{n} layers · newest on top", "portraits": "Portraits", "seeAll": "See all portraits →",
+      "instagram": "Instagram", "igFollow": "Follow on Instagram →",
+      "igNote": "Preview with sample posts. On the finished site the six latest posts are fetched automatically from Instagram.",
+      "about": "About me · bedrock"
+    },
+    "exh": {
+      "back": "← All exhibitions", "place": "Place", "period": "Period", "works": "Works",
+      "view": "Exhibition view", "layer0": "Layer 0 · 0 m", "layer": "Layer", "enquire": "Enquire about this work",
+      "prev": "Previous", "next": "Next", "otherNav": "Other exhibitions", "workFallback": "Work",
+      "descFallback": "{t} – exhibition by visual artist Anita Rufus Pamer."
+    },
+    "portraits": {
+      "title": "Portraits", "back": "← Home", "count1": "{n} portrait", "countN": "{n} portraits",
+      "showLarge": "View {t} larger", "fallback": "Portrait", "dialog": "Portrait",
+      "prev": "← Previous", "next": "Next →", "close": "Close ✕",
+      "description": "Portraits by visual artist Anita Rufus Pamer."
+    },
+    "inquiry": {
+      "title": "Enquiry", "work": "Regarding work", "name": "Name", "email": "Email", "message": "Message",
+      "send": "Send", "honeypot": "Do not fill in this field:"
+    },
+    "js": {
+      "sent": "Thank you — sent", "errName": "Please enter your name.", "errEmail": "Please enter a valid email address.",
+      "errSend": "Sorry, the message could not be sent. Please try again later.", "igAlt": "Instagram post", "locale": "en-GB"
+    }
+  }
+}
