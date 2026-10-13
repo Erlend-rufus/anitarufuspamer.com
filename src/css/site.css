@@ -37,6 +37,8 @@ a:hover { color: var(--muted); }
 .topbar__nav { display: flex; gap: clamp(14px, 2.2vw, 32px); font-size: var(--fs-nav); }
 .topbar__nav a { color: var(--ink); }
 .topbar__nav a:hover, .topbar__logo:hover { color: var(--muted); }
+.topbar__nav .topbar__lang { letter-spacing: .08em; color: var(--muted); }
+.topbar__nav .topbar__lang:hover { color: var(--ink); }
 .topbar__toggle {
   display: none;
   background: transparent; border: 1px solid var(--ink); color: var(--ink);
