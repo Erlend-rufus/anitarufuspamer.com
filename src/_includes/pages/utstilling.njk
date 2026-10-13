@@ -1,30 +1,17 @@
----
-layout: base.njk
-bodyClass: exh
-pagination:
-  data: exhibitions
-  size: 1
-  alias: ex
-permalink: "/utstillinger/{{ ex.slug }}/"
-eleventyComputed:
-  title: "{{ ex.title }}"
-  description: "{{ ex.text | truncate(155) if ex.text else ex.title + ' – utstilling av billedkunstner Anita Rufus Pamer.' }}"
-  ogSrc: "{{ ex.heroImage }}"
-  inquiryDefault: "{{ ex.title }}"
----
+{%- set L = i18n[lang] %}
 {%- set works = ex.works %}
 <section class="exh-top">
   <div class="exh-top__left">
-    <a class="back-link" href="/#utstillinger">← Alle utstillinger</a>
+    <a class="back-link" href="{{ L.ui.paths.home }}#utstillinger">{{ L.ui.exh.back }}</a>
     <h1 class="exh-title{% if ex.title.length > 30 or (ex.title | longestWord) >= 16 %} exh-title--long{% endif %}">{{ ex.title | myk }}</h1>
   </div>
   {%- if ex.place or ex.period or works.length or ex.text %}
   <div class="exh-top__right">
     {%- if ex.place or ex.period or works.length %}
     <dl class="facts">
-      {%- if ex.place %}<dt>Sted</dt><dd>{{ ex.place }}</dd>{% endif %}
-      {%- if ex.period %}<dt>Periode</dt><dd>{{ ex.period }}</dd>{% endif %}
-      {%- if works.length %}<dt>Verk</dt><dd>{{ works.length }}</dd>{% endif %}
+      {%- if ex.place %}<dt>{{ L.ui.exh.place }}</dt><dd>{{ ex.place }}</dd>{% endif %}
+      {%- if ex.period %}<dt>{{ L.ui.exh.period }}</dt><dd>{{ ex.period }}</dd>{% endif %}
+      {%- if works.length %}<dt>{{ L.ui.exh.works }}</dt><dd>{{ works.length }}</dd>{% endif %}
     </dl>
     {%- endif %}
     {%- if ex.text %}
@@ -37,7 +24,7 @@ eleventyComputed:
 {%- if ex.heroImage or ex.heroLabel %}
 <figure class="exh-hero">
   <div class="exh-hero__img">{% bilde ex.heroImage, ex.heroAlt, "100vw", { eager: true, label: ex.heroLabel } %}</div>
-  <figcaption class="exh-hero__cap"><span>Utstillingsbilde</span><span>Lag 0 · 0 m</span></figcaption>
+  <figcaption class="exh-hero__cap"><span>{{ L.ui.exh.view }}</span><span>{{ L.ui.exh.layer0 }}</span></figcaption>
 </figure>
 {%- endif %}
 
@@ -45,8 +32,8 @@ eleventyComputed:
 {%- for w in works %}
 {%- set wd = w.width or widths[loop.index0 % 3] %}
 {%- set m = [w.technique, w.size, w.year] %}
-<section class="work{% if loop.index0 % 2 %} work--reverse{% endif %}" aria-label="{{ w.title or ('Verk ' + loop.index) }}">
-  <div class="work__rule label"><span class="work__depth">−{{ 24 * loop.index }} m</span><span class="work__layer">Lag {{ loop.index }}</span></div>
+<section class="work{% if loop.index0 % 2 %} work--reverse{% endif %}" aria-label="{{ w.title or (L.ui.exh.workFallback + ' ' + loop.index) }}">
+  <div class="work__rule label"><span class="work__depth">−{{ 24 * loop.index }} m</span><span class="work__layer">{{ L.ui.exh.layer }} {{ loop.index }}</span></div>
   <div class="work__body">
     <div class="work__img" style="width: {{ wd }}px">{% bilde w.image, w.alt, "(min-width: 900px) " + wd + "px, 100vw", { crop: w.crop, label: w.label, aspect: w.aspect } %}</div>
     <div class="work__text">
@@ -55,15 +42,15 @@ eleventyComputed:
       {%- if lines | select | length %}
       <span class="work__meta">{% for x in lines %}{% if x %}{{ x }}<br>{% endif %}{% endfor %}</span>
       {%- endif %}
-      <button class="btn btn--outline" type="button" data-inquire="{{ (w.title or ('Verk ' + loop.index)) + ' — ' + ex.title }}">Forespør verket</button>
+      <button class="btn btn--outline" type="button" data-inquire="{{ (w.title or (L.ui.exh.workFallback + ' ' + loop.index)) + ' — ' + ex.title }}">{{ L.ui.exh.enquire }}</button>
     </div>
   </div>
 </section>
 {%- endfor %}
 
-<nav class="prevnext" aria-label="Andre utstillinger">
-  <a href="{{ ex.prev.url }}" rel="prev"><span class="prevnext__label">Forrige</span><span class="prevnext__title">{{ ex.prev.title }}</span></a>
-  <a href="{{ ex.next.url }}" rel="next" class="prevnext__next"><span class="prevnext__label">Neste</span><span class="prevnext__title">{{ ex.next.title }}</span></a>
+<nav class="prevnext" aria-label="{{ L.ui.exh.otherNav }}">
+  <a href="{{ ex.prev.url }}" rel="prev"><span class="prevnext__label">{{ L.ui.exh.prev }}</span><span class="prevnext__title">{{ ex.prev.title }}</span></a>
+  <a href="{{ ex.next.url }}" rel="next" class="prevnext__next"><span class="prevnext__label">{{ L.ui.exh.next }}</span><span class="prevnext__title">{{ ex.next.title }}</span></a>
 </nav>
 
 {% include "partials/foresporsel.njk" %}

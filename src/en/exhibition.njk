@@ -1,0 +1,18 @@
+---
+layout: base.njk
+bodyClass: exh
+lang: en
+pagination:
+  data: i18n.en.exhibitions
+  size: 1
+  alias: ex
+permalink: "/en/exhibitions/{{ ex.slug }}/"
+eleventyComputed:
+  title: "{{ ex.title }}"
+  description: "{{ ex.text | truncate(155) if (ex.text and not ex.textPlaceholder) else i18n[lang].ui.exh.descFallback | replace('{t}', ex.title) }}"
+  ogSrc: "{{ ex.heroImage }}"
+  inquiryDefault: "{{ ex.title }}"
+  altNo: "{{ ex.urlNo }}"
+  altEn: "{{ ex.urlEn }}"
+---
+{% include "pages/utstilling.njk" %}

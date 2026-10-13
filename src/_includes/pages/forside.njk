@@ -1,11 +1,10 @@
----
-layout: base.njk
-hideFooter: true
-bodyClass: home
----
+{%- set L = i18n[lang] %}
+{%- set site = L.site %}
+{%- set exhibitions = L.exhibitions %}
+{%- set portraits = L.portraits %}
 {%- set hero = site.heroWorks | selectattr("image") %}
 {%- if hero.length %}
-<section class="hero" data-hero style="--n: {{ hero.length }}" aria-label="Utvalgte verk">
+<section class="hero" data-hero style="--n: {{ hero.length }}" aria-label="{{ L.ui.home.heroAria }}">
   <div class="hero__sticky">
     <div class="hero__stage">
       {%- for w in hero %}
@@ -35,7 +34,7 @@ bodyClass: home
       <div class="hero__progress" aria-hidden="true">
         <span class="hero__ticks">{% for w in hero %}<span></span>{% endfor %}</span>
         <span class="hero__counter"><span data-hero-count>01</span> / {{ hero.length | pad2 }}</span>
-        <span class="hero__hint">Scroll ↓</span>
+        <span class="hero__hint">{{ L.ui.home.scroll }}</span>
       </div>
       {%- endif %}
     </div>
@@ -49,10 +48,10 @@ bodyClass: home
 </section>
 
 <div class="strata-head label" id="utstillinger">
-  <span>Utstillinger</span>
-  <span class="strata-head__count">{{ exhibitions.length }} lag · nyest øverst</span>
+  <span>{{ L.ui.home.exhibitions }}</span>
+  <span class="strata-head__count">{{ L.ui.home.layersNote | replace("{n}", exhibitions.length | string) }}</span>
 </div>
-<nav class="strata" aria-label="Utstillinger">
+<nav class="strata" aria-label="{{ L.ui.home.exhibitions }}">
   {%- set tones = [246, 232, 240, 214, 228, 196, 208, 98, 84, 92, 70, 62] %}
   {%- set heights = [170, 200, 170, 200, 180, 200, 170, 200, 190, 170, 200, 180] %}
   {%- for ex in exhibitions %}
@@ -75,14 +74,14 @@ bodyClass: home
 <section class="layer layer--white teaser" id="portretter">
   <div class="section-head">
     <div class="section-head__titles">
-      <span class="label">Portretter</span>
-      <p class="section-head__title">Portretter</p>
+      <span class="label">{{ L.ui.home.portraits }}</span>
+      <p class="section-head__title">{{ L.ui.home.portraits }}</p>
     </div>
-    <a class="underline-link" href="/portretter/">Se alle portretter →</a>
+    <a class="underline-link" href="{{ L.ui.paths.portraits }}">{{ L.ui.home.seeAll }}</a>
   </div>
   <div class="teaser__grid">
     {%- for p in teaser | batch(4) | first %}
-    <a class="teaser__item frame frame--{{ 'a' if loop.index0 % 2 == 0 else 'b' }}" href="/portretter/#portrett-{{ loop.index }}">
+    <a class="teaser__item frame frame--{{ 'a' if loop.index0 % 2 == 0 else 'b' }}" href="{{ L.ui.paths.portraits }}#portrett-{{ loop.index }}">
       {% bilde p.image, p.alt, "(min-width: 640px) 25vw, 50vw", { crop: p.crop } %}
     </a>
     {%- endfor %}
@@ -95,10 +94,10 @@ bodyClass: home
 <section class="instagram" id="instagram"{% if site.instagramPosts %} data-instagram-static{% else %} data-instagram hidden{% endif %}>
   <div class="section-head">
     <div class="section-head__titles">
-      <span class="label">Instagram</span>
+      <span class="label">{{ L.ui.home.instagram }}</span>
       <a class="section-head__title" href="https://www.instagram.com/{{ handle }}/" target="_blank" rel="noopener">@{{ handle }}</a>
     </div>
-    <a class="underline-link" href="https://www.instagram.com/{{ handle }}/" target="_blank" rel="noopener">Følg på Instagram →</a>
+    <a class="underline-link" href="https://www.instagram.com/{{ handle }}/" target="_blank" rel="noopener">{{ L.ui.home.igFollow }}</a>
   </div>
   <div class="instagram__grid" data-instagram-grid>
     {%- for post in site.instagramPosts %}
@@ -110,7 +109,7 @@ bodyClass: home
     {%- endfor %}
   </div>
   {%- if site.instagramPosts %}
-  <p class="instagram__note">Forhåndsvisning med eksempelinnlegg. På den ferdige siden hentes de seks siste innleggene automatisk fra Instagram.</p>
+  <p class="instagram__note">{{ L.ui.home.igNote }}</p>
   {%- endif %}
 </section>
 {%- endif %}
@@ -123,7 +122,7 @@ bodyClass: home
     <div class="about__portrait about__portrait--ph" aria-hidden="true"><span class="ph__label">{{ site.about.portraitLabel }}</span></div>
     {%- endif %}
     <div class="about__text">
-      <span class="label about__label">Om meg · berggrunn</span>
+      <span class="label about__label">{{ L.ui.home.about }}</span>
       {%- if site.about.lead %}<p class="about__lead">{{ site.about.lead }}</p>{% endif %}
       {%- for para in site.about.paragraphs %}<p>{{ para }}</p>{% endfor %}
     </div>

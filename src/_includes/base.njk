@@ -1,22 +1,28 @@
+{%- set L = i18n[lang] -%}
 <!doctype html>
-<html lang="nb">
+<html lang="{{ L.ui.htmlLang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{%- set pageTitle = (title + " · " + site.name) if title else site.name %}
-{%- set pageDesc = description or site.description %}
+{%- set pageTitle = (title + " · " + L.site.name) if title else L.site.name %}
+{%- set pageDesc = description or L.site.description %}
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="canonical" href="{{ L.site.url }}{{ page.url }}">
+{%- if altNo and altEn %}
+<link rel="alternate" hreflang="nb" href="{{ L.site.url }}{{ altNo }}">
+<link rel="alternate" hreflang="en" href="{{ L.site.url }}{{ altEn }}">
+<link rel="alternate" hreflang="x-default" href="{{ L.site.url }}{{ altNo }}">
+{%- endif %}
 <meta property="og:type" content="website">
-<meta property="og:locale" content="nb_NO">
-<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ L.ui.ogLocale }}">
+<meta property="og:site_name" content="{{ L.site.name }}">
 <meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:description" content="{{ pageDesc }}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-{%- set og = ogSrc or (site.heroWorks[0].image if site.heroWorks.length) %}
+<meta property="og:url" content="{{ L.site.url }}{{ page.url }}">
+{%- set og = ogSrc or (L.site.heroWorks[0].image if L.site.heroWorks.length) %}
 {%- if og %}
-<meta property="og:image" content="{{ site.url }}{% ogbilde og %}">
+<meta property="og:image" content="{{ L.site.url }}{% ogbilde og %}">
 <meta name="twitter:card" content="summary_large_image">
 {%- endif %}
 <link rel="preload" href="/fonts/pt-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -24,10 +30,11 @@
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/site.css">
 <script>document.documentElement.classList.add("js")</script>
+<script id="ui-strings" type="application/json">{{ L.ui.js | dump | safe }}</script>
 <script src="/js/site.js" defer></script>
 </head>
 <body class="{{ bodyClass }}">
-<a class="skip-link" href="#innhold">Hopp til innhold</a>
+<a class="skip-link" href="#innhold">{{ L.ui.skip }}</a>
 {% include "partials/topplinje.njk" %}
 {% include "partials/dybdemal.njk" %}
 <div class="page" id="innhold">

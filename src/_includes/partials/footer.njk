@@ -1,7 +1,8 @@
+{%- set L = i18n[lang] %}
 <footer class="footer" id="kontakt">
-  <span>© {{ site.name }}</span>
+  <span>© {{ L.site.name }}</span>
   <span class="footer__links">
-    {%- if site.phone %}<a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>{% endif %}
-    {%- if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+    {%- if L.site.phone %}<a href="tel:{{ L.site.phone | replace(' ', '') }}">{{ L.site.phone }}</a>{% endif %}
+    {%- if L.site.email %}<a href="mailto:{{ L.site.email }}">{{ L.site.email }}</a>{% endif %}
   </span>
 </footer>

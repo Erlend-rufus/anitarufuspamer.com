@@ -1,21 +1,22 @@
-{%- set nav = [
-  ["Forside", "/"],
-  ["Utstillinger", "/#utstillinger"],
-  ["Portretter", "/portretter/"],
-  ["Om meg", "/#om"],
-  ["Kontakt", "#kontakt"]
-] %}
+{%- set L = i18n[lang] %}
+{%- set otherUrl = altEn if lang == "no" else altNo %}
 <header class="topbar">
-  <a class="topbar__logo" href="/">{{ site.name }}</a>
-  <nav class="topbar__nav" aria-label="Hovedmeny">
-    {%- for item in nav %}
-    <a href="{{ item[1] }}"{% if item[1] == page.url %} aria-current="page"{% endif %}>{{ item[0] }}</a>
+  <a class="topbar__logo" href="{{ L.ui.paths.home }}">{{ L.site.name }}</a>
+  <nav class="topbar__nav" aria-label="{{ L.ui.navAria }}">
+    {%- for item in L.ui.nav %}
+    <a href="{{ item.href }}"{% if item.href == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
     {%- endfor %}
+    {%- if otherUrl %}
+    <a class="topbar__lang" href="{{ otherUrl }}" hreflang="{{ L.ui.switch.lang }}" lang="{{ L.ui.switch.lang }}" aria-label="{{ L.ui.switch.aria }}">{{ L.ui.switch.label }}</a>
+    {%- endif %}
   </nav>
-  <button class="topbar__toggle" type="button" aria-expanded="false" aria-controls="meny">Meny</button>
+  <button class="topbar__toggle" type="button" aria-expanded="false" aria-controls="meny">{{ L.ui.menu }}</button>
 </header>
-<nav class="menu-panel" id="meny" aria-label="Meny" hidden>
-  {%- for item in nav %}
-  <a href="{{ item[1] }}"{% if item[1] == page.url %} aria-current="page"{% endif %}>{{ item[0] }}</a>
+<nav class="menu-panel" id="meny" aria-label="{{ L.ui.menuAria }}" hidden>
+  {%- for item in L.ui.nav %}
+  <a href="{{ item.href }}"{% if item.href == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
   {%- endfor %}
+  {%- if otherUrl %}
+  <a href="{{ otherUrl }}" hreflang="{{ L.ui.switch.lang }}" lang="{{ L.ui.switch.lang }}">{{ L.ui.switch.title }}</a>
+  {%- endif %}
 </nav>
