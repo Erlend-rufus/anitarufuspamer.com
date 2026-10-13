@@ -14,15 +14,20 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("content/");
   eleventyConfig.addWatchTarget("images/");
 
-  eleventyConfig.addPassthroughCopy({ "src/css": "css", "src/js": "js", "_redirects": "_redirects" });
+  eleventyConfig.addPassthroughCopy({ "src/css": "css", "src/js": "js", "src/plassholder": "plassholder", "_redirects": "_redirects" });
   for (const f of FONTS) {
     eleventyConfig.addPassthroughCopy({ [`node_modules/@fontsource/${f}`]: `fonts/${path.basename(f)}` });
   }
 
   // Bilde fra images/: lager WebP i flere bredder med srcset, width og height.
-  // Tom sti gir tom streng, så manglende bilder ikke vises.
+  // Uten bilde: plassholder (utsnitt eller grå flate) når opts.crop/opts.label finnes, ellers ingenting.
   eleventyConfig.addAsyncShortcode("bilde", async (src, alt = "", sizes = "100vw", opts = {}) => {
-    if (!src) return "";
+    if (!src) {
+      if (!opts.crop && !opts.label) return "";
+      const style = [opts.crop || "", opts.aspect ? `aspect-ratio:${opts.aspect}` : ""].filter(Boolean).join(";");
+      const label = opts.label ? `<span class="ph__label">${opts.label}</span>` : "";
+      return `<div class="ph${opts.label ? " ph--grey" : ""}" style="${style}" aria-hidden="true">${label}</div>`;
+    }
     const meta = await Image(path.join("images", src), {
       widths: [480, 960, 1600, "auto"], // "auto" = originalen (maks 2400 px)
       formats: ["webp"],
