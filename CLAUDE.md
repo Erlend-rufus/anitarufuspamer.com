@@ -62,6 +62,12 @@ Bildestier i `content/*.json` er relative til `images/` (f.eks. `utstillinger/va
 
 **Ny side eller seksjon.** Spør først. Siden skal holde seg enkel.
 
+## Plassholdere
+`"plassholdere": true` i `content/site.json` fyller tomme felt og seksjoner med plassholderne fra designprototypen: «Verktittel I», «Teknikk · mål · år», «Tekst om utstillingen kommer.», Sted/Periode «—», 9 portretter, 6 eksempelinnlegg på Instagram, «Portrett av Anita», og utsnitt av de tre 1-til-1-bildene. Logikken ligger i `lib/plassholdere.js`, og bildene ligger i `src/plassholder/`.
+- Ekte innhold går alltid foran. Et felt fylles bare når det er tomt, og en utstilling får plassholderverk bare når `works` er tom.
+- Portrettene byttes ut samlet: så snart `content/portraits.json` har ett ekte portrett, forsvinner de 9 plassholderne.
+- **Før domenet flyttes:** sett `"plassholdere": false`. Da skjules alt som er tomt.
+
 ## Bildekrav
 - WebP, lang side maks 2400 px, kvalitet ca. 80. Konverter og skaler før commit.
 - Filnavn: små bokstaver, ASCII, bindestrek (`vindu-i-snoe.webp`). Ingen æ, ø, å eller mellomrom.
