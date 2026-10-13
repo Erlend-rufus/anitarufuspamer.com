@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Anita Rufus Pamer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff;color:#3B3B3B;font-family:'Fira Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#3B3B3B;text-decoration:none}
+a:hover{color:#8A8A8A}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<header style="position:fixed;top:0;left:0;right:0;height:72px;z-index:40;background:#fff;border-bottom:1px solid #E3E3E3;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:0 clamp(16px,3vw,40px);color:#3B3B3B;">
+  <a href="#" onClick="{{ homeGo }}" style="font-size:clamp(17px,2vw,22px);white-space:nowrap;color:#3B3B3B;">Anita Rufus Pamer</a>
+  <sc-if value="{{ full }}" hint-placeholder-val="{{ true }}"><nav style="display:flex;gap:clamp(14px,2.2vw,32px);font-size:clamp(13px,1.2vw,15px);"><sc-for list="{{ nav }}" as="n" hint-placeholder-count="5"><a href="#" onClick="{{ n.go }}" style="color:#3B3B3B;">{{ n.label }}</a></sc-for></nav></sc-if>
+  <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMenu }}" style="background:transparent;border:1px solid #3B3B3B;color:#3B3B3B;padding:9px 18px;font:400 13px 'Fira Sans',sans-serif;letter-spacing:.06em;cursor:pointer;">{{ menuLabel }}</button></sc-if>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;top:72px;left:0;right:0;z-index:38;background:#fff;border-bottom:1px solid #E3E3E3;padding:8px clamp(20px,4vw,40px) 20px;display:flex;flex-direction:column;"><sc-for list="{{ nav }}" as="n" hint-placeholder-count="5"><a href="#" onClick="{{ n.go }}" style="padding:16px 0;border-top:1px solid #E3E3E3;font-family:'PT Serif',serif;font-size:22px;color:#3B3B3B;">{{ n.label }}</a></sc-for></div>
+</sc-if>
+<sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;left:0;top:72px;bottom:0;width:72px;z-index:39;background:#fff;border-right:1px solid #E3E3E3;">
+    <div style="position:absolute;left:58px;top:24px;bottom:24px;width:1px;background:#3B3B3B;"></div>
+    <div style="position:absolute;left:59px;top:24px;bottom:24px;width:8px;background:repeating-linear-gradient(to bottom,#3B3B3B 0,#3B3B3B 1px,transparent 1px,transparent 17px);"></div>
+    <div style="position:absolute;left:0;width:58px;top:{{ mk }}px;height:14px;display:flex;align-items:center;justify-content:flex-end;gap:3px;font-size:10.5px;font-variant-numeric:tabular-nums;color:#3B3B3B;"><span>{{ depthLabel }}</span><span style="width:12px;height:2px;background:#3B3B3B;"></span></div>
+  </div>
+</sc-if>
+<div style="min-height:100vh;background:{{ bg }};color:{{ fg }};padding-top:72px;margin-left:{{ ml }}px;">
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <main data-screen-label="Forside">
+      <div style="position:relative;height:{{ trackH }}px;">
+        <div style="position:sticky;top:72px;height:{{ hh }}px;background:#fff;overflow:hidden;">
+          <div style="position:absolute;left:0;right:0;top:0;height:{{ imgH }}px;overflow:hidden;background:#ECECEA;">
+            <sc-for list="{{ layers }}" as="l" hint-placeholder-count="3">
+              <div style="position:absolute;left:0;right:0;top:0;bottom:0;z-index:{{ l.z }};clip-path:{{ l.clip }};overflow:hidden;">
+                <div style="position:absolute;left:0;right:0;top:-24px;bottom:-24px;transform:translateY({{ l.ty }}px);{{ l.crop }}"></div>
+                <div style="position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,{{ l.dim }});"></div>
+              </div>
+            </sc-for>
+            <sc-for list="{{ edges }}" as="e" hint-placeholder-count="2">
+              <div style="position:absolute;left:0;right:0;top:{{ e.top }}px;height:2px;background:#fff;z-index:20;opacity:{{ e.o }};"></div>
+            </sc-for>
+          </div>
+          <div style="position:absolute;left:0;right:0;top:{{ imgH }}px;height:56px;border-bottom:1px solid #E3E3E3;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(20px,3vw,40px);font-size:13px;color:#6A6A6A;background:#fff;">
+            <div style="position:relative;flex:1;height:100%;min-width:0;">
+              <sc-for list="{{ caps }}" as="c" hint-placeholder-count="3">
+                <div style="position:absolute;left:0;top:0;bottom:0;display:flex;align-items:center;gap:18px;opacity:{{ c.o }};white-space:nowrap;"><span style="font-family:'PT Serif',serif;font-style:italic;font-size:17px;color:#3B3B3B;">{{ c.title }}</span><span>{{ c.meta }}</span><span style="font-variant-numeric:tabular-nums;">{{ c.depth }}</span></div>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;flex:none;">
+              <div style="display:flex;gap:5px;align-items:center;"><sc-for list="{{ ticks }}" as="t" hint-placeholder-count="3"><span style="display:block;height:2px;width:{{ t.w }}px;background:{{ t.bg }};"></span></sc-for></div>
+              <span style="font-variant-numeric:tabular-nums;color:#3B3B3B;">{{ counter }}</span>
+              <span>{{ scrollHint }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section style="padding:clamp(72px,10vw,128px) clamp(20px,4.5vw,56px) clamp(64px,8vw,112px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px 72px;align-items:end;">
+        <p style="margin:0;font-family:'PT Serif',serif;font-size:clamp(30px,4vw,46px);line-height:1.14;letter-spacing:-.01em;text-wrap:balance;">Jeg utforsker forholdet mellom natur og mennesker.</p>
+        <p style="margin:0;font-size:17px;line-height:1.7;font-weight:300;text-wrap:pretty;max-width:30em;">Min fascinasjon for naturens konstante forandring, inspirert av min bakgrunn i geologi, gjenspeiles i mine verk.</p>
+      </section>
+
+      <div id="utstillinger" style="padding:0 clamp(20px,4.5vw,56px) 28px;display:flex;justify-content:space-between;font-size:12px;letter-spacing:.16em;text-transform:uppercase;"><span>Utstillinger</span><span style="color:#8A8A8A;">12 lag · nyest øverst</span></div>
+      <div>
+        <sc-for list="{{ bands }}" as="b" hint-placeholder-count="6">
+          <a href="#" onClick="{{ b.open }}" onMouseEnter="{{ b.enter }}" onMouseLeave="{{ b.leave }}" style="display:block;position:relative;overflow:hidden;margin-top:-22px;height:{{ b.h }}px;background:{{ b.bg }};color:{{ b.fg }};clip-path:{{ b.clip }};">
+            <div style="position:absolute;left:clamp(20px,4.5vw,56px);top:50px;right:{{ bandRight }}px;display:grid;grid-template-columns:{{ bandCols }};gap:16px;align-items:baseline;transform:translateX({{ b.shift }}px);transition:transform .45s cubic-bezier(.2,.7,.2,1);">
+              <span style="font-size:12px;line-height:1.6;font-variant-numeric:tabular-nums;opacity:.7;">{{ b.depth }}<br>{{ b.year }}</span>
+              <span style="font-family:'PT Serif',serif;font-size:clamp(22px,2.6vw,34px);line-height:1.15;">{{ b.title }}</span>
+            </div>
+            <div style="position:absolute;right:56px;top:46px;bottom:24px;width:440px;opacity:{{ b.imgO }};transform:translateX({{ b.imgX }}px);transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1);{{ b.crop }}"></div>
+          </a>
+        </sc-for>
+      </div>
+
+      <section id="portretter" style="margin-top:-22px;position:relative;background:#fff;clip-path:polygon(0 12px,24% 3px,52% 14px,80% 1px,100% 9px,100% 100%,0 100%);padding:clamp(88px,10vw,128px) clamp(20px,4.5vw,56px) clamp(64px,8vw,104px);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px 24px;margin-bottom:clamp(32px,4vw,56px);">
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;">Portretter</span>
+            <p style="margin:0;font-family:'PT Serif',serif;font-size:clamp(28px,3.4vw,44px);line-height:1.12;letter-spacing:-.01em;">Portretter</p>
+          </div>
+          <a href="#" onClick="{{ portraitsGo }}" style="font-size:15px;color:#3B3B3B;border-bottom:1px solid #3B3B3B;padding-bottom:2px;">Se alle portretter →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ teaserCols }};gap:clamp(14px,3vw,40px);align-items:start;">
+          <sc-for list="{{ teaser }}" as="p" hint-placeholder-count="4">
+            <a href="#" onClick="{{ portraitsGo }}" style="display:block;margin-top:{{ p.mt }}px;color:#3B3B3B;" style-hover="opacity:.85;">
+              <div style="aspect-ratio:{{ p.asp }};{{ p.crop }}"></div>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+
+      <section id="instagram" style="background:#F4F4F2;padding:clamp(64px,8vw,96px) clamp(20px,4.5vw,56px) clamp(88px,10vw,120px);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px 24px;margin-bottom:clamp(28px,3.4vw,44px);">
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;">Instagram</span>
+            <a href="{{ igUrl }}" target="_blank" rel="noopener" style="font-family:'PT Serif',serif;font-size:clamp(28px,3.4vw,44px);line-height:1.12;letter-spacing:-.01em;color:#3B3B3B;">{{ igHandle }}</a>
+          </div>
+          <a href="{{ igUrl }}" target="_blank" rel="noopener" style="font-size:15px;color:#3B3B3B;border-bottom:1px solid #3B3B3B;padding-bottom:2px;">Følg på Instagram →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ igCols }};gap:clamp(14px,2vw,24px) clamp(8px,1.4vw,16px);">
+          <sc-for list="{{ igs }}" as="g" hint-placeholder-count="6">
+            <a href="{{ g.url }}" target="_blank" rel="noopener" onMouseEnter="{{ g.enter }}" onMouseLeave="{{ g.leave }}" style="display:flex;flex-direction:column;gap:10px;color:#3B3B3B;min-width:0;">
+              <div style="aspect-ratio:1;overflow:hidden;background:#ECECEA;"><div style="width:100%;height:100%;transform:scale({{ g.sc }});transition:transform .6s cubic-bezier(.2,.7,.2,1);{{ g.crop }}"></div></div>
+              <span style="font-size:12px;color:#8A8A8A;">{{ g.date }}</span>
+              <span style="font-size:13px;line-height:1.45;font-weight:300;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">{{ g.caption }}</span>
+            </a>
+          </sc-for>
+        </div>
+        <sc-if value="{{ igNote }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:clamp(28px,3.4vw,44px) 0 0;font-size:13px;line-height:1.6;color:#6A6A6A;max-width:44em;border-top:1px solid #D6D6D3;padding-top:16px;">Forhåndsvisning med eksempelinnlegg. På den ferdige siden hentes de seks siste innleggene automatisk fra Instagram.</p>
+        </sc-if>
+      </section>
+
+      <div id="om" style="margin-top:-22px;position:relative;background:#3B3B3B;color:#fff;clip-path:polygon(0 12px,26% 2px,55% 14px,81% 0,100% 8px,100% 100%,0 100%);padding:clamp(100px,11vw,140px) clamp(20px,4.5vw,56px) 40px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:48px 72px;align-items:start;">
+          <div style="width:100%;max-width:320px;aspect-ratio:4/5;background:#555;display:flex;align-items:flex-end;padding:16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#C8C8C8;">Portrett av Anita</div>
+          <div style="display:flex;flex-direction:column;gap:22px;max-width:36em;">
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;">Om meg · berggrunn</span>
+            <p style="margin:0;font-family:'PT Serif',serif;font-size:clamp(22px,2.4vw,28px);line-height:1.4;text-wrap:pretty;">Jeg, Anita Rufus Pamer, utforsker forholdet mellom natur og mennesker. Min fascinasjon for naturens konstante forandring, inspirert av min bakgrunn i geologi, gjenspeiles i mine verk.</p>
+            <p style="margin:0;font-size:17px;line-height:1.75;font-weight:300;text-wrap:pretty;">Jeg fokuserer på hvordan naturelementer og menneskelige elementer endrer og påvirker hverandre over tid.</p>
+            <p style="margin:0;font-size:17px;line-height:1.75;font-weight:300;text-wrap:pretty;">Gjennom mitt arbeid formidler jeg et budskap om verdens og naturens skjønnhet, som også inviterer til ettertanke om menneskets rolle til hverandre, og til naturen.</p>
+          </div>
+        </div>
+        <div id="kontakt" style="margin-top:96px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px;border-top:1px solid rgba(255,255,255,.22);padding-top:22px;font-size:15px;font-weight:300;"><span>© Anita Rufus Pamer</span><span style="display:flex;gap:28px;flex-wrap:wrap;"><a href="tel:99518892" style="color:#fff;" style-hover="opacity:.7;">995 18 892</a><a href="mailto:Anita@pamco.no" style="color:#fff;" style-hover="opacity:.7;">Anita@pamco.no</a></span></div>
+      </div>
+    </main>
+  </sc-if>
+
+  <sc-if value="{{ isExh }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Utstilling">
+      <section style="padding:clamp(32px,4vw,48px) clamp(20px,4.5vw,56px) clamp(56px,7vw,88px);display:grid;grid-template-columns:{{ twoCol }};gap:48px 56px;align-items:end;min-height:{{ topMin }}px;">
+        <div style="display:flex;flex-direction:column;gap:36px;min-width:0;">
+          <a href="#" onClick="{{ listGo }}" style="color:inherit;font-size:14px;opacity:.75;">← Alle utstillinger</a>
+          <h1 style="margin:0;font-family:'PT Serif',serif;font-weight:700;font-size:{{ ex.h1 }};line-height:1;letter-spacing:-.025em;text-wrap:balance;">{{ ex.title }}</h1>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:28px;font-size:16px;line-height:1.7;font-weight:300;">
+          <dl style="margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 20px;font-size:14px;"><dt style="opacity:.65;">Sted</dt><dd style="margin:0;">—</dd><dt style="opacity:.65;">Periode</dt><dd style="margin:0;">—</dd><dt style="opacity:.65;">Verk</dt><dd style="margin:0;">{{ ex.count }}</dd></dl>
+          <p style="margin:0;">Tekst om utstillingen kommer.</p>
+        </div>
+      </section>
+      <section style="padding:0 clamp(20px,4.5vw,56px);">
+        <div style="aspect-ratio:3/2;display:flex;align-items:flex-end;padding:16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A8A;{{ ex.heroCrop }}">{{ ex.heroLabel }}</div>
+        <div style="display:flex;justify-content:space-between;gap:12px;padding:14px 0 clamp(72px,9vw,120px);font-size:13px;opacity:.75;"><span>Utstillingsbilde</span><span>Lag 0 · 0 m</span></div>
+      </section>
+      <sc-for list="{{ works }}" as="w" hint-placeholder-count="4">
+        <section style="padding:0 clamp(20px,4.5vw,56px);">
+          <div style="display:flex;gap:18px;align-items:center;border-top:1px solid {{ line }};padding-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;"><span style="font-variant-numeric:tabular-nums;">{{ w.depth }}</span><span style="opacity:.65;">Lag {{ w.n }}</span></div>
+          <div style="display:flex;flex-direction:{{ w.dir }};gap:clamp(24px,4vw,56px);align-items:{{ w.align }};padding:44px 0 clamp(72px,9vw,120px);">
+            <div style="flex:none;width:{{ w.w }}px;max-width:100%;aspect-ratio:{{ w.asp }};display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:.1em;color:#8A8A8A;{{ w.crop }}">{{ w.label }}</div>
+            <div style="display:flex;flex-direction:column;gap:10px;max-width:260px;">
+              <span style="font-family:'PT Serif',serif;font-style:italic;font-size:26px;">{{ w.title }}</span>
+              <span style="font-size:14px;line-height:1.6;opacity:.7;">Teknikk<br>Mål<br>År</span>
+              <button onClick="{{ w.ask }}" style="margin-top:10px;align-self:flex-start;background:transparent;color:inherit;border:1px solid currentColor;padding:12px 20px;font:400 14px 'Fira Sans',sans-serif;cursor:pointer;" style-hover="opacity:.6;">Forespør verket</button>
+            </div>
+          </div>
+        </section>
+      </sc-for>
+      <section style="padding:0 clamp(20px,4.5vw,56px) clamp(48px,6vw,72px);display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <a href="#" onClick="{{ prev.go }}" style="border-top:1px solid {{ line }};padding-top:22px;display:flex;flex-direction:column;gap:6px;color:inherit;"><span style="font-size:12px;opacity:.65;letter-spacing:.1em;text-transform:uppercase;">Forrige</span><span style="font-family:'PT Serif',serif;font-size:clamp(18px,2.2vw,26px);">{{ prev.title }}</span></a>
+        <a href="#" onClick="{{ next.go }}" style="border-top:1px solid {{ line }};padding-top:22px;display:flex;flex-direction:column;gap:6px;text-align:right;color:inherit;"><span style="font-size:12px;opacity:.65;letter-spacing:.1em;text-transform:uppercase;">Neste</span><span style="font-family:'PT Serif',serif;font-size:clamp(18px,2.2vw,26px);">{{ next.title }}</span></a>
+      </section>
+    </main>
+  </sc-if>
+
+  <sc-if value="{{ isPortraits }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Portretter">
+      <section style="padding:clamp(40px,6vw,72px) clamp(20px,4.5vw,56px) clamp(48px,6vw,80px);display:grid;grid-template-columns:{{ twoCol }};gap:32px 56px;align-items:end;">
+        <div style="display:flex;flex-direction:column;gap:28px;min-width:0;">
+          <a href="#" onClick="{{ homeGo }}" style="font-size:14px;color:#8A8A8A;">← Forside</a>
+          <h1 style="margin:0;font-family:'PT Serif',serif;font-weight:400;font-size:clamp(52px,10vw,148px);line-height:.95;letter-spacing:-.035em;">Portretter</h1>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;font-size:16px;line-height:1.7;font-weight:300;max-width:30em;">
+          <p style="margin:0;">Tekst om portrettene kommer.</p>
+          <span style="font-size:14px;color:#8A8A8A;">{{ pCount }} portretter</span>
+        </div>
+      </section>
+      <section style="padding:0 clamp(20px,4.5vw,56px) clamp(72px,9vw,120px);">
+        <div style="display:grid;grid-template-columns:{{ pCols }};gap:clamp(28px,4vw,56px) clamp(16px,3vw,40px);align-items:start;">
+          <sc-for list="{{ portraits }}" as="p" hint-placeholder-count="9">
+            <figure style="margin:0;margin-top:{{ p.mt }}px;display:flex;flex-direction:column;gap:12px;">
+              <a href="#" onClick="{{ p.open }}" style="display:block;aspect-ratio:{{ p.asp }};{{ p.crop }}" style-hover="opacity:.85;"></a>
+              <figcaption style="display:flex;justify-content:space-between;gap:4px 12px;flex-wrap:wrap;font-size:13px;line-height:1.5;"><span style="font-family:'PT Serif',serif;font-style:italic;font-size:17px;">{{ p.title }}</span><span style="color:#8A8A8A;">Teknikk · mål · år</span></figcaption>
+            </figure>
+          </sc-for>
+        </div>
+      </section>
+    </main>
+  </sc-if>
+
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:0;right:0;top:72px;bottom:0;z-index:41;background:rgba(255,255,255,.98);color:#3B3B3B;overflow:auto;display:grid;grid-template-columns:{{ lbCols }};gap:32px 48px;padding:clamp(20px,4vw,40px) clamp(20px,4.5vw,56px);align-items:center;">
+      <div style="justify-self:center;height:{{ lbH }}px;aspect-ratio:{{ lb.asp }};max-width:100%;{{ lb.crop }}"></div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <span style="font-size:12px;letter-spacing:.16em;color:#8A8A8A;">{{ lb.num }}</span>
+        <span style="font-family:'PT Serif',serif;font-style:italic;font-size:36px;line-height:1.1;">{{ lb.title }}</span>
+        <span style="font-size:14px;line-height:1.6;color:#8A8A8A;">Teknikk · mål · år</span>
+        <button onClick="{{ lb.askFn }}" style="margin-top:8px;align-self:flex-start;background:#3B3B3B;color:#fff;border:0;padding:13px 26px;font:400 14px 'Fira Sans',sans-serif;cursor:pointer;" style-hover="opacity:.8;">Forespør verket</button>
+        <div style="display:flex;gap:22px;margin-top:22px;font-size:14px;"><a href="#" onClick="{{ lb.prev }}">← Forrige</a><a href="#" onClick="{{ lb.next }}">Neste →</a><a href="#" onClick="{{ lb.close }}" style="margin-left:auto;">Lukk ✕</a></div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showEnd }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Kontakt">
+      <section id="foresporsel" style="padding:clamp(48px,6vw,80px) clamp(20px,4.5vw,56px) clamp(40px,5vw,48px);display:grid;grid-template-columns:{{ twoCol }};gap:48px 72px;border-top:1px solid {{ line }};">
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <h2 style="margin:0;font-family:'PT Serif',serif;font-weight:700;font-size:clamp(32px,3.6vw,44px);">Forespørsel</h2>
+          <p style="margin:0;font-size:18px;line-height:1.6;font-weight:300;max-width:20em;">Dersom dette vekket interessen din, ta kontakt ved bruk av skjemaet under!</p>
+        </div>
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:20px;">
+          <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;opacity:.9;">Gjelder verk<input readOnly="{{ true }}" value="{{ inqShow }}" style="border:0;border-bottom:1px solid {{ line }};background:transparent;color:inherit;padding:10px 0;font:300 17px 'Fira Sans',sans-serif;outline:none;"></label>
+          <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;opacity:.9;">Navn<input style="border:0;border-bottom:1px solid {{ line }};background:transparent;color:inherit;padding:10px 0;font:300 17px 'Fira Sans',sans-serif;outline:none;"></label>
+          <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;opacity:.9;">E-post<input type="email" style="border:0;border-bottom:1px solid {{ line }};background:transparent;color:inherit;padding:10px 0;font:300 17px 'Fira Sans',sans-serif;outline:none;"></label>
+          <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;opacity:.9;">Melding<textarea rows="3" style="border:0;border-bottom:1px solid {{ line }};background:transparent;color:inherit;padding:10px 0;font:300 17px 'Fira Sans',sans-serif;outline:none;resize:none;"></textarea></label>
+          <button type="submit" style="align-self:flex-start;margin-top:8px;background:{{ fg }};color:{{ bg }};border:0;padding:15px 40px;font:400 15px 'Fira Sans',sans-serif;cursor:pointer;" style-hover="opacity:.8;">{{ sendLabel }}</button>
+        </form>
+      </section>
+      <div id="kontakt" style="padding:32px clamp(20px,4.5vw,56px) 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px;font-size:14px;font-weight:300;"><span>© Anita Rufus Pamer</span><span style="display:flex;gap:28px;flex-wrap:wrap;"><a href="tel:99518892" style="color:inherit;">995 18 892</a><a href="mailto:Anita@pamco.no" style="color:inherit;">Anita@pamco.no</a></span></div>
+    </main>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;instagramHandle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;@brukernavn&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Instagram&quot;},&quot;showPreviewNote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Instagram&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home', idx: 0, sc: 0, mx: 4000, vw: 1440, vh: 900, hov: -1, inq: '', sent: false, menu: false, lb: -1, igHov: -1 };
+
+  clamp(v, a, b) { return Math.max(a === undefined ? 0 : a, Math.min(b === undefined ? 1 : b, v)); }
+
+  crop(src, cx, cy, Z, asp) {
+    const r = 1279 / 1920, z = Math.max(Z, 1.02, 1.02 / (asp * r));
+    const cl = (v) => Math.max(0, Math.min(1, v));
+    const px = cl((0.5 - cx * z) / (1 - z));
+    const py = cl((1 / (2 * asp) - cy * z * r) / (1 / asp - z * r));
+    return 'background-image:url(' + src + ');background-size:' + (z * 100).toFixed(1) + '% auto;background-position:' + (px * 100).toFixed(1) + '% ' + (py * 100).toFixed(1) + '%;background-repeat:no-repeat;background-color:#ECECEA';
+  }
+
+  componentDidMount() {
+    this._on = () => { if (this._r) return; this._r = requestAnimationFrame(() => { this._r = 0; this.measure(); }); };
+    window.addEventListener('scroll', this._on, { passive: true });
+    window.addEventListener('resize', this._on);
+    this.measure(); setTimeout(() => this.measure(), 500); setTimeout(() => this.measure(), 2000);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._on); window.removeEventListener('resize', this._on);
+  }
+
+  measure() {
+    const d = document.documentElement;
+    this.setState({ sc: window.scrollY, mx: Math.max(1, d.scrollHeight - window.innerHeight), vw: window.innerWidth, vh: window.innerHeight });
+  }
+
+  go = (page, hash, idx) => (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const stay = page === this.state.page && (page !== 'exh' || idx === undefined || idx === this.state.idx);
+    const fin = () => setTimeout(() => {
+      const el = hash && document.getElementById(hash);
+      const top = el ? el.getBoundingClientRect().top + window.scrollY - 80 : 0;
+      window.scrollTo({ top, behavior: stay && el ? 'smooth' : 'auto' }); this.measure();
+    }, 40);
+    if (stay) { this.setState({ menu: false, lb: -1 }); return fin(); }
+    this.setState({ page, idx: idx === undefined ? this.state.idx : idx, inq: '', sent: false, hov: -1, menu: false, lb: -1 }, fin);
+  };
+
+  ask = (title, exTitle) => (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    this.setState({ inq: title + ' — ' + exTitle, sent: false });
+    const el = document.getElementById('foresporsel');
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  };
+
+  renderVals() {
+    const S = this.state, cl = (v, a, b) => this.clamp(v, a, b), ss = (u) => u * u * (3 - 2 * u);
+    const wide = S.vw >= 900, narrow = S.vw < 640, home = S.page === 'home';
+    const F = 'images/1til1-fjord.webp', V = 'images/1til1-vindu.webp', G = 'images/1til1-gul-vegg.webp';
+    const EX = ['1-til-1 Gyldenpris Kunsthall', 'Alt mellom himmel og jord', 'Vårslipp', 'Alt jeg ikke ser, alt jeg ikke vet, alt jeg ikke føler', 'De 5 element', 'Vandreutstillinger', 'Get it for cheap', 'Min vei til master', 'Masterutstilling 2018', 'KHIB og UIB', 'Bachelorutstilling 2016', 'Luftskipet'];
+    const YEAR = { 8: '2018', 10: '2016' }, ROM = ['I', 'II', 'III', 'IV', 'V', 'VI'], n = EX.length;
+    const p = cl(S.sc / S.mx), dpt = Math.round(p * 96);
+
+    const tones = [246, 232, 240, 214, 228, 196, 208, 98, 84, 92, 70, 62];
+    const heights = [170, 200, 170, 200, 180, 200, 170, 200, 190, 170, 200, 180];
+    const clips = ['polygon(0 14px,22% 3px,51% 11px,79% 0,100% 8px,100% 100%,0 100%)', 'polygon(0 2px,18% 12px,43% 5px,70% 15px,100% 4px,100% 100%,0 100%)', 'polygon(0 9px,30% 16px,58% 2px,84% 12px,100% 6px,100% 100%,0 100%)'];
+    const bp = [[F, .4, .47, 1.3], [V, .3, .45, 1.8], [G, .5, .85, 1.6], [F, .2, .78, 2.0], [V, .6, .5, 1.6], [G, .17, .45, 2.2]];
+    const bands = EX.map((t, i) => {
+      const o = bp[i % 6], h = heights[i], on = S.hov === i, tn = tones[i] + (on ? (tones[i] < 130 ? 10 : -8) : 0);
+      return { title: t, depth: i ? '−' + (i * 8) + ' m' : '0 m', year: YEAR[i] || '', h, bg: 'rgb(' + tn + ',' + tn + ',' + tn + ')', fg: tones[i] < 130 ? '#fff' : '#3B3B3B', clip: clips[i % 3], shift: on ? 14 : 0, imgO: wide && on ? 1 : 0, imgX: on ? 0 : 28, crop: this.crop(o[0], o[1], o[2], o[3], 440 / (h - 70)), open: this.go('exh', null, i), enter: () => this.setState({ hov: i }), leave: () => this.setState({ hov: -1 }) };
+    });
+
+    const hh = Math.max(420, S.vh - 72), imgH = hh - 56, step = Math.max(480, Math.round(S.vh * .75)), W = S.vw - (wide ? 72 : 0);
+    const t = S.sc / step, r = [1, ss(cl((t - .15) / .7)), ss(cl((t - 1.15) / .7))];
+    const src = [[F, .379, .461, 1.35, 'Verktittel I', '0 m'], [V, .297, .423, 1.5, 'Verktittel II', '−8 m'], [G, .216, .62, 1.35, 'Verktittel III', '−16 m']];
+    const layers = src.map((o, i) => { const nx = i < 2 ? r[i + 1] : 0, own = r[i]; return { z: i + 1, clip: 'inset(' + ((1 - own) * 100).toFixed(2) + '% 0 0 0)', ty: ((i ? (1 - own) * 36 : 0) - nx * 40).toFixed(1), dim: (nx * .35).toFixed(3), crop: this.crop(o[0], o[1], o[2], o[3], W / (imgH + 48)) }; });
+    const a = r[1] + r[2];
+    const caps = src.map((o, i) => ({ title: o[4], depth: o[5], meta: wide ? 'Teknikk · mål · år' : '', o: cl(1 - Math.abs(a - i) * 2.5).toFixed(2) }));
+    const edges = [1, 2].map((i) => ({ top: ((1 - r[i]) * imgH).toFixed(1), o: r[i] > .01 && r[i] < .99 ? 1 : 0 }));
+    const ticks = [0, 1, 2].map((i) => ({ w: Math.abs(a - i) < .5 ? 28 : 12, bg: Math.abs(a - i) < .5 ? '#3B3B3B' : '#C4C4C0' }));
+
+    const ei = S.idx, exT = EX[ei], first = ei === 0;
+    const q = cl((p - .1) / .8), v = Math.round(255 - 196 * q), dark = v < 150;
+    const exh = S.page === 'exh';
+    const bg = !exh ? '#fff' : 'rgb(' + v + ',' + v + ',' + v + ')', fg = !exh || !dark ? '#3B3B3B' : '#fff', line = exh && dark ? 'rgba(255,255,255,.4)' : 'rgba(59,59,59,.3)';
+    const w0 = [[F, .379, .461, 2.2, .72, 520, 1], [V, .297, .423, 2.6, 1.36, 760, 0], [G, .216, .855, 3.0, 1.5, 600, 1], [V, .587, .51, 10, .302, 220, 0]];
+    const wp = [[.8, 480], [1.3, 640], [1, 420]];
+    const works = (first ? w0 : wp).map((o, i) => {
+      const left = i % 2 === 0, asp = first ? o[4] : o[0], w = first ? o[5] : o[1];
+      return { n: i + 1, depth: '−' + (24 * (i + 1)) + ' m', title: 'Verktittel ' + ROM[i], w, asp, dir: wide ? (left ? 'row' : 'row-reverse') : 'column', align: wide ? 'flex-end' : 'flex-start', crop: first ? this.crop(o[0], o[1], o[2], o[3], o[4]) : 'background:#ECECEA', label: first ? '' : 'Bilde av verk', ask: this.ask('Verktittel ' + ROM[i], exT) };
+    });
+    const ref = (k) => ({ title: EX[k], go: this.go('exh', null, k) });
+    const PC = [[V, .297, .423, 3.4, .8], [V, .93, .426, 4.5, .75], [V, .589, .508, 3.2, .8], [G, .2, .47, 3.0, .75], [V, .138, .89, 3.6, .8], [G, .576, .446, 3.6, .75], [G, .82, .59, 3.2, .8], [G, .3, .86, 2.6, .75], [F, .379, .461, 2.4, .8]];
+    const compact = S.vw < 860, pc = S.vw < 900 ? 2 : 3, NP = 9, pad2 = (k) => String(k).padStart(2, '0');
+    const prs = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'].map((rm, i) => ({ num: pad2(i + 1), title: 'Portrett ' + rm, asp: PC[i][4], crop: this.crop(PC[i][0], PC[i][1], PC[i][2], PC[i][3], PC[i][4]), mt: pc === 3 ? [0, 72, 24][i % 3] : (i % 2 ? 40 : 0), open: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ lb: i }); } }));
+    const lbItem = prs[Math.max(0, S.lb)];
+    const lbGo = (d) => (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ lb: (S.lb + d + NP) % NP }); };
+    const teaser = prs.slice(0, 4).map((p, i) => ({ num: p.num, asp: p.asp, crop: p.crop, mt: narrow ? (i % 2 ? 32 : 0) : [0, 56, 16, 72][i] }));
+    const handle = this.props.instagramHandle ?? '@brukernavn', igUrl = 'https://www.instagram.com/' + handle.replace('@', '') + '/';
+    const igs = [[F, .379, .461, 2.2, 'Nytt arbeid på veggen.', '11. okt'], [V, .297, .423, 2.6, 'Detalj fra verket.', '6. okt'], [G, .216, .855, 3.0, 'Fra atelieret.', '29. sep'], [G, .17, .43, 3.4, 'Skisser til neste serie.', '22. sep'], [F, .198, .78, 2.8, 'Installasjonsbilde.', '15. sep'], [V, .587, .51, 4, 'Fra åpningen.', '9. sep']].map((o, i) => ({ crop: this.crop(o[0], o[1], o[2], o[3], 1), caption: o[4], date: o[5], url: igUrl, sc: S.igHov === i ? 1.05 : 1, enter: () => this.setState({ igHov: i }), leave: () => this.setState({ igHov: -1 }) }));
+    const ex = { title: exT, h1: exT.length > 30 ? 'clamp(34px,5vw,72px)' : 'clamp(44px,8vw,104px)', count: String(works.length), heroCrop: first ? this.crop(F, .5, .5, 1.02, 1.5) : 'background:#ECECEA', heroLabel: first ? '' : 'Utstillingsbilde' };
+
+    return {
+      wide, isHome: home, isExh: exh, bg, fg, line,
+      isPortraits: S.page === 'portraits', showEnd: S.page !== 'home', compact, full: !compact, menuOpen: S.menu && compact,
+      toggleMenu: () => this.setState({ menu: !S.menu }), menuLabel: S.menu ? 'Lukk' : 'Meny',
+      portraits: prs, pCols: 'repeat(' + pc + ',minmax(0,1fr))', pCount: String(NP), portraitsGo: this.go('portraits'),
+      teaser, teaserCols: narrow ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))',
+      lbOpen: S.lb >= 0 && S.page === 'portraits', lbCols: wide ? 'minmax(0,1fr) 320px' : 'minmax(0,1fr)', lbH: Math.max(240, Math.min(S.vh - 72 - (wide ? 96 : 300), 760)),
+      lb: { asp: lbItem.asp, crop: lbItem.crop, num: pad2(Math.max(0, S.lb) + 1) + ' / ' + pad2(NP), title: lbItem.title, prev: lbGo(-1), next: lbGo(1), close: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ lb: -1 }); }, askFn: (e) => { this.setState({ lb: -1 }); this.ask(lbItem.title, 'Portretter')(e); } },
+      igs, igHandle: handle, igUrl, igNote: this.props.showPreviewNote ?? true, igCols: 'repeat(' + (narrow ? 2 : S.vw < 900 ? 3 : 6) + ',minmax(0,1fr))', ml: wide ? 72 : 0,
+      homeGo: this.go('home'), listGo: this.go('home', 'utstillinger'),
+      nav: [['Forside', 'home'], ['Utstillinger', 'home', 'utstillinger'], ['Portretter', 'portraits'], ['Om meg', 'home', 'om'], ['Kontakt', S.page, 'kontakt']].map((x) => ({ label: x[0], go: this.go(x[1], x[2]) })),
+      mk: (24 + p * Math.max(0, S.vh - 72 - 48) - 7).toFixed(1), depthLabel: dpt ? '−' + dpt + ' m' : '0 m',
+      hh, imgH, trackH: hh + 2 * step, layers, edges, caps, ticks, counter: String(Math.round(a) + 1).padStart(2, '0') + ' / 03', scrollHint: narrow ? '' : 'Scroll ↓',
+      bands, bandRight: wide ? 540 : 20, bandCols: narrow ? '56px minmax(0,1fr)' : '96px minmax(0,1fr)',
+      twoCol: wide ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)', topMin: wide ? 520 : 0,
+      ex, works, prev: ref((ei - 1 + n) % n), next: ref((ei + 1) % n),
+      inqShow: S.inq || exT, sendLabel: S.sent ? 'Takk — sendt' : 'Send', submit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
