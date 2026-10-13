@@ -62,6 +62,13 @@ Bildestier i `content/*.json` er relative til `images/` (f.eks. `utstillinger/va
 
 **Ny side eller seksjon.** Spør først. Siden skal holde seg enkel.
 
+## Beslutninger fra Anita (oversiktsskjemaet, 13.10.2026)
+- **Forsidebilder:** behold de nåværende tre.
+- **Verk:** vis bare «Forespør verket». Ingen priser og ingen status (til salgs/solgt). Feltet `status` i dataene brukes ikke.
+- **Presentasjonssiden for søknader:** Anita overlater utformingen til Claude, men innholdet finnes ikke ennå. Lag den som skjult side (`noindex`, ikke i meny eller sitemap) når innholdet foreligger.
+- **Engelsk versjon og statistikk:** Anita svarte «Ja» på begge. Begge er nye funksjoner som krever avklaring med Erlend før de bygges (se under).
+- **Instagram:** brukernavn mangler fortsatt.
+
 ## Innhold hentet fra den gamle siden
 Bildene og tekstene fra Webnode ble importert med `migrering/importer-scrape.py` (se `docs` i handoff fra scraperen).
 - Verk har feltet `kilde` (originalt filnavn på Webnode) for sporbarhet.
