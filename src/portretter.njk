@@ -5,7 +5,7 @@ description: Portretter av billedkunstner Anita Rufus Pamer.
 permalink: /portretter/
 inquiryDefault: Portretter
 ---
-{%- set items = portraits | selectattr("image") %}
+{%- set items = portraits %}
 <section class="pt-top">
   <div class="pt-top__left">
     <a class="back-link back-link--muted" href="/">← Forside</a>
@@ -23,10 +23,10 @@ inquiryDefault: Portretter
 <section class="pt-gallery">
   <div class="pt-grid">
     {%- for p in items %}
-    {%- set m = [p.technique, p.size, p.year] | meta %}
+    {%- set m = p.metaText or ([p.technique, p.size, p.year] | meta) %}
     <figure class="pt-item" id="portrett-{{ loop.index }}">
       <button class="pt-item__open frame frame--{{ 'a' if loop.index0 % 2 == 0 else 'b' }}" type="button" data-lightbox-open="{{ loop.index0 }}" aria-label="Vis {{ p.title or ('portrett ' + loop.index) }} stort">
-        {% bilde p.image, p.alt, "(min-width: 900px) 33vw, 50vw" %}
+        {% bilde p.image, p.alt, "(min-width: 900px) 33vw, 50vw", { crop: p.crop } %}
       </button>
       {%- if p.title or m %}
       <figcaption>{% if p.title %}<span class="pt-item__title">{{ p.title }}</span>{% endif %}{% if m %}<span class="pt-item__meta">{{ m }}</span>{% endif %}</figcaption>
@@ -38,9 +38,9 @@ inquiryDefault: Portretter
 
 <dialog class="lightbox" aria-label="Portrett" data-lightbox>
   {%- for p in items %}
-  {%- set m = [p.technique, p.size, p.year] | meta %}
+  {%- set m = p.metaText or ([p.technique, p.size, p.year] | meta) %}
   <div class="lightbox__slide" data-slide hidden>
-    <div class="lightbox__img">{% bilde p.image, p.alt, "(min-width: 900px) 60vw, 100vw" %}</div>
+    <div class="lightbox__img">{% bilde p.image, p.alt, "(min-width: 900px) 60vw, 100vw", { crop: p.crop, aspect: p.aspect } %}</div>
     <div class="lightbox__text">
       <span class="lightbox__num">{{ loop.index | pad2 }} / {{ items.length | pad2 }}</span>
       {%- if p.title %}<span class="lightbox__title">{{ p.title }}</span>{% endif %}
