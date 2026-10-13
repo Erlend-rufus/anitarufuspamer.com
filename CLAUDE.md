@@ -18,6 +18,7 @@ Eleventy 3 med Nunjucks-maler. Ingen rammeverk, ingen bundler.
 
 ```
 content/
+  ui.json              faste tekster på siden (meny, knapper, etiketter) på norsk og engelsk
   site.json            kontaktinfo, Instagram-brukernavn, utsagn, Om meg, tekster, forsidebilder (heroWorks)
   exhibitions.json     alle utstillinger, nyest først
   portraits.json       portretter
@@ -28,14 +29,15 @@ images/
   forside/             de tre hovedbildene
   om-meg/              portrett av Anita
 src/
-  _data/               leser content/*.json og regner ut dybde, forrige/neste
+  _data/i18n.js        bygger innholdet for norsk (i18n.no) og engelsk (i18n.en) via lib/content.js
+  en/                  engelske sider (/en/, /en/exhibitions/<slug>/, /en/portraits/)
   _includes/           base.njk og partials/ (topplinje, dybdemål, footer)
-  index.njk            forside
-  utstilling.njk       én side per utstilling: /utstillinger/<slug>/
-  portretter.njk       /portretter/
+  _includes/pages/     sidekroppene (forside, utstilling, portretter), felles for begge språk
+  index.njk, utstilling.njk, portretter.njk   norske sider: /, /utstillinger/<slug>/, /portretter/
   css/tokens.css       farger, fonter, avstander
   css/site.css         all annen stil
   js/site.js           meny og scroll-effekter
+lib/                   content.js (bygger innhold per språk) og plassholdere.js
 netlify/functions/instagram.js
 _redirects             videresending fra gamle Webnode-adresser
 migrering/             skript for å hente innhold fra Webnode (engangsjobb)
@@ -60,13 +62,21 @@ Bildestier i `content/*.json` er relative til `images/` (f.eks. `utstillinger/va
 
 **Endre tekst, telefon, e-post eller Instagram-brukernavn.** Se `content/site.json`. Endre ordene eksakt slik brukeren ber om, uten å omformulere.
 
+**Engelsk versjon.** Siden finnes på norsk (`/`) og engelsk (`/en/`). Norsk er hovedspråket, og Anitas norske tekster endres aldri uten at brukeren ber om det. Engelsk bygges fra de samme datafilene:
+- `content/site.json` har en `en`-blokk med engelske versjoner av utsagn, ingress, Om meg, skjematekst og beskrivelse.
+- Utstillinger kan ha `titleEn` og `textEn`. Mangler de, brukes norsk tittel og tekst.
+- Verktitler oversettes aldri. Teknikkord (olje, akryl, kritt …) oversettes automatisk, eller settes med `techniqueEn`. Alt-tekster fra importskriptet oversettes automatisk, eller settes med `altEn`.
+- Faste tekster (meny, knapper, etiketter) står i `content/ui.json`.
+- Ny utstilling eller ny tekst: legg alltid inn engelsk versjon samtidig. Brukeren godkjenner oversettelsene, og Claude lager dem.
+
 **Ny side eller seksjon.** Spør først. Siden skal holde seg enkel.
 
 ## Beslutninger fra Anita (oversiktsskjemaet, 13.10.2026)
 - **Forsidebilder:** behold de nåværende tre.
 - **Verk:** vis bare «Forespør verket». Ingen priser og ingen status (til salgs/solgt). Feltet `status` i dataene brukes ikke.
 - **Presentasjonssiden for søknader:** Anita overlater utformingen til Claude, men innholdet finnes ikke ennå. Lag den som skjult side (`noindex`, ikke i meny eller sitemap) når innholdet foreligger.
-- **Engelsk versjon og statistikk:** Anita svarte «Ja» på begge. Begge er nye funksjoner som krever avklaring med Erlend før de bygges (se under).
+- **Engelsk versjon:** ja. Claude oversetter, Erlend godkjenner. Ferdig bygget under `/en/`, med språkbryter i topplinjen.
+- **Statistikk:** Netlify Analytics (slått på i Netlify av Erlend 13.10.2026). Den teller på serversiden uten informasjonskapsler, så det trengs verken kode eller samtykkebanner. Ikke legg inn Google Tag Manager. Dagens Webnode-side hadde 11 875 besøkende; Netlify teller bare fra den ble slått på.
 - **Instagram:** brukernavn mangler fortsatt.
 
 ## Innhold hentet fra den gamle siden
