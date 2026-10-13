@@ -16,7 +16,7 @@ eleventyComputed:
 <section class="exh-top">
   <div class="exh-top__left">
     <a class="back-link" href="/#utstillinger">← Alle utstillinger</a>
-    <h1 class="exh-title{% if ex.title.length > 30 %} exh-title--long{% endif %}">{{ ex.title }}</h1>
+    <h1 class="exh-title{% if ex.title.length > 30 or (ex.title | longestWord) >= 16 %} exh-title--long{% endif %}">{{ ex.title | myk }}</h1>
   </div>
   {%- if ex.place or ex.period or works.length or ex.text %}
   <div class="exh-top__right">
