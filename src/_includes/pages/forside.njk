@@ -1,0 +1,137 @@
+{%- set L = i18n[lang] %}
+{%- set site = L.site %}
+{%- set exhibitions = L.exhibitions %}
+{%- set portraits = L.portraits %}
+{%- set hero = site.heroWorks | selectattr("image") %}
+{%- if hero.length %}
+<section class="hero" data-hero style="--n: {{ hero.length }}" aria-label="{{ L.ui.home.heroAria }}">
+  <div class="hero__sticky">
+    <div class="hero__stage">
+      {%- for w in hero %}
+      {%- set m = w.metaText or ([w.technique, w.size, w.year] | meta) %}
+      <figure class="hero__layer" style="--i: {{ loop.index0 }}; z-index: {{ loop.index }}">
+        <div class="hero__img">{% bilde w.image, w.alt, "(max-aspect-ratio: 3/2) 150vh, 100vw", { eager: loop.first } %}</div>
+        <div class="hero__dim"></div>
+        {%- if w.title or m %}
+        <figcaption class="hero__listcap">{% if w.title %}<span class="hero__title">{{ w.title }}</span>{% endif %}{% if m %}<span>{{ m }}</span>{% endif %}</figcaption>
+        {%- endif %}
+      </figure>
+      {%- endfor %}
+      {%- for w in hero %}{% if not loop.first %}<div class="hero__edge" style="--i: {{ loop.index0 }}" aria-hidden="true"></div>{% endif %}{% endfor %}
+    </div>
+    <div class="hero__bar">
+      <div class="hero__caps" aria-hidden="true">
+        {%- for w in hero %}
+        {%- set m = w.metaText or ([w.technique, w.size, w.year] | meta) %}
+        <div class="hero__cap" style="--i: {{ loop.index0 }}">
+          {%- if w.title %}<span class="hero__title">{{ w.title }}</span>{% endif %}
+          {%- if m %}<span class="hero__meta">{{ m }}</span>{% endif %}
+          <span class="hero__depth">{{ (loop.index0 * 8) | depth }}</span>
+        </div>
+        {%- endfor %}
+      </div>
+      {%- if hero.length > 1 %}
+      <div class="hero__progress" aria-hidden="true">
+        <span class="hero__ticks">{% for w in hero %}<span></span>{% endfor %}</span>
+        <span class="hero__counter"><span data-hero-count>01</span> / {{ hero.length | pad2 }}</span>
+        <span class="hero__hint">{{ L.ui.home.scroll }}</span>
+      </div>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="statement">
+  {%- if site.statement %}<p class="statement__big">{{ site.statement }}</p>{% endif %}
+  {%- if site.intro %}<p class="statement__small">{{ site.intro }}</p>{% endif %}
+</section>
+
+<div class="strata-head label" id="utstillinger">
+  <span>{{ L.ui.home.exhibitions }}</span>
+  <span class="strata-head__count">{{ L.ui.home.layersNote | replace("{n}", exhibitions.length | string) }}</span>
+</div>
+<nav class="strata" aria-label="{{ L.ui.home.exhibitions }}">
+  {%- set tones = [246, 232, 240, 214, 228, 196, 208, 98, 84, 92, 70, 62] %}
+  {%- set heights = [170, 200, 170, 200, 180, 200, 170, 200, 190, 170, 200, 180] %}
+  {%- for ex in exhibitions %}
+  {%- set tone = tones[loop.index0 % 12] %}
+  {%- set thumb = ex.heroImage or (ex.works | selectattr("image") | first).image %}
+  {%- set thumbAlt = ex.heroAlt if ex.heroImage else (ex.works | selectattr("image") | first).alt %}
+  <a class="band band--clip{{ loop.index0 % 3 }} {{ 'band--dark' if tone < 130 else 'band--light' }}" href="{{ ex.url }}"
+     style="--tone: {{ tone }}; --tone-hover: {{ tone + 10 if tone < 130 else tone - 8 }}; height: {{ heights[loop.index0 % 12] }}px">
+    <span class="band__text">
+      <span class="band__depth">{{ ex.depth | depth }}{% if ex.year %}<br>{{ ex.year }}{% endif %}</span>
+      <span class="band__title">{{ ex.title }}</span>
+    </span>
+    {%- if thumb or ex.thumbCrop %}<span class="band__thumb">{% bilde thumb, "", "440px", { crop: ex.thumbCrop } %}</span>{% endif %}
+  </a>
+  {%- endfor %}
+</nav>
+
+{%- set teaser = portraits %}
+{%- if teaser.length %}
+<section class="layer layer--white teaser" id="portretter">
+  <div class="section-head">
+    <div class="section-head__titles">
+      <span class="label">{{ L.ui.home.portraits }}</span>
+      <p class="section-head__title">{{ L.ui.home.portraits }}</p>
+    </div>
+    <a class="underline-link" href="{{ L.ui.paths.portraits }}">{{ L.ui.home.seeAll }}</a>
+  </div>
+  <div class="teaser__grid">
+    {%- for p in teaser | batch(4) | first %}
+    <a class="teaser__item frame frame--{{ 'a' if loop.index0 % 2 == 0 else 'b' }}" href="{{ L.ui.paths.portraits }}#portrett-{{ loop.index }}">
+      {% bilde p.image, p.alt, "(min-width: 640px) 25vw, 50vw", { crop: p.crop } %}
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+{%- if site.instagram %}
+{%- set handle = site.instagram | replace("@", "") %}
+<section class="instagram" id="instagram"{% if site.instagramPosts %} data-instagram-static{% else %} data-instagram hidden{% endif %}>
+  <div class="section-head">
+    <div class="section-head__titles">
+      <span class="label">{{ L.ui.home.instagram }}</span>
+      <a class="section-head__title" href="https://www.instagram.com/{{ handle }}/" target="_blank" rel="noopener">@{{ handle }}</a>
+    </div>
+    <a class="underline-link" href="https://www.instagram.com/{{ handle }}/" target="_blank" rel="noopener">{{ L.ui.home.igFollow }}</a>
+  </div>
+  <div class="instagram__grid" data-instagram-grid>
+    {%- for post in site.instagramPosts %}
+    <a class="ig-item" href="https://www.instagram.com/{{ handle }}/" target="_blank" rel="noopener">
+      <span class="ig-item__img"><span class="ph" style="{{ post.crop }}" aria-hidden="true"></span></span>
+      <span class="ig-item__date">{{ post.date }}</span>
+      <span class="ig-item__caption">{{ post.caption }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+  {%- if site.instagramPosts %}
+  <p class="instagram__note">{{ L.ui.home.igNote }}</p>
+  {%- endif %}
+</section>
+{%- endif %}
+
+<section class="layer layer--dark about" id="om">
+  <div class="about__grid{% if not site.about.portrait and not site.about.portraitLabel %} about__grid--text{% endif %}">
+    {%- if site.about.portrait %}
+    <div class="about__portrait">{% bilde site.about.portrait, site.about.portraitAlt, "320px" %}</div>
+    {%- elif site.about.portraitLabel %}
+    <div class="about__portrait about__portrait--ph" aria-hidden="true"><span class="ph__label">{{ site.about.portraitLabel }}</span></div>
+    {%- endif %}
+    <div class="about__text">
+      <span class="label about__label">{{ L.ui.home.about }}</span>
+      {%- if site.about.lead %}<p class="about__lead">{{ site.about.lead }}</p>{% endif %}
+      {%- for para in site.about.paragraphs %}<p>{{ para }}</p>{% endfor %}
+    </div>
+  </div>
+  <footer class="about__footer" id="kontakt">
+    <span>© {{ site.name }}</span>
+    <span class="footer__links">
+      {%- if site.phone %}<a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>{% endif %}
+      {%- if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+    </span>
+  </footer>
+</section>

@@ -44,5 +44,19 @@
       "size": "",
       "year": ""
     }
-  ]
+  ],
+  "en": {
+    "description": "Visual artist Anita Rufus Pamer explores the relationship between nature and people.",
+    "statement": "I explore the relationship between nature and people.",
+    "intro": "My fascination with nature's constant change, inspired by my background in geology, is reflected in my work.",
+    "about": {
+      "lead": "I, Anita Rufus Pamer, explore the relationship between nature and people. My fascination with nature's constant change, inspired by my background in geology, is reflected in my work.",
+      "paragraphs": [
+        "I focus on how natural elements and human elements change and affect each other over time.",
+        "Through my work I convey a message about the beauty of the world and of nature, which also invites reflection on the role of human beings, towards one another and towards nature."
+      ]
+    },
+    "inquiryText": "If this piqued your interest, get in touch using the form below!",
+    "portraitsText": ""
+  }
 }

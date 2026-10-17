@@ -4,6 +4,12 @@
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+// Tekster per språk kommer fra siden (content/ui.json) som JSON i #ui-strings.
+const STR = (() => {
+  try { return JSON.parse(document.getElementById("ui-strings").textContent); } catch { return {}; }
+})();
+const MENU = { open: STR.menu || "Meny", close: STR.menuClose || "Lukk" };
+
 /* ---------- Mobilmeny ---------- */
 const toggle = document.querySelector(".topbar__toggle");
 const panel = document.getElementById("meny");
@@ -12,7 +18,7 @@ function setMenu(open) {
   if (!toggle || !panel) return;
   panel.hidden = !open;
   toggle.setAttribute("aria-expanded", String(open));
-  toggle.textContent = open ? "Lukk" : "Meny";
+  toggle.textContent = open ? MENU.close : MENU.open;
 }
 
 if (toggle && panel) {
@@ -134,6 +140,7 @@ if (form) {
   const work = form.querySelector("[data-inquiry-work]");
   const error = form.querySelector("[data-inquiry-error]");
   const submit = form.querySelector("[data-inquiry-submit]");
+  const submitLabel = submit.textContent;
   const name = form.elements["navn"];
   const email = form.elements["e-post"];
 
@@ -143,7 +150,7 @@ if (form) {
     work.value = btn.dataset.inquire;
     if (lightbox?.open) lightbox.close();
     submit.disabled = false;
-    submit.textContent = "Send";
+    submit.textContent = submitLabel;
     document.getElementById("foresporsel").scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth" });
     name.focus({ preventScroll: true });
   });
@@ -158,8 +165,8 @@ if (form) {
     e.preventDefault();
     [name, email].forEach((f) => f.removeAttribute("aria-invalid"));
     error.hidden = true;
-    if (!name.value.trim()) return fail("Skriv inn navnet ditt.", name);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) return fail("Skriv inn en gyldig e-postadresse.", email);
+    if (!name.value.trim()) return fail(STR.errName, name);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) return fail(STR.errEmail, email);
 
     submit.disabled = true;
     try {
@@ -169,11 +176,11 @@ if (form) {
         body: new URLSearchParams(new FormData(form)).toString(),
       });
       if (!res.ok) throw new Error(res.status);
-      submit.textContent = "Takk — sendt";
+      submit.textContent = STR.sent;
       name.value = ""; email.value = ""; form.elements["melding"].value = "";
     } catch {
       submit.disabled = false;
-      fail("Beklager, meldingen ble ikke sendt. Prøv igjen litt senere.");
+      fail(STR.errSend);
     }
   });
 }
@@ -182,7 +189,7 @@ if (form) {
 const ig = document.querySelector("[data-instagram]");
 if (ig) {
   const grid = ig.querySelector("[data-instagram-grid]");
-  const date = new Intl.DateTimeFormat("nb-NO", { day: "numeric", month: "short" });
+  const date = new Intl.DateTimeFormat(STR.locale || "nb-NO", { day: "numeric", month: "short" });
   fetch("/.netlify/functions/instagram")
     .then((r) => (r.ok ? r.json() : []))
     .catch(() => [])
@@ -198,7 +205,7 @@ if (ig) {
         box.className = "ig-item__img";
         const img = document.createElement("img");
         img.src = p.mediaUrl;
-        img.alt = p.caption ? p.caption.slice(0, 120) : "Innlegg på Instagram";
+        img.alt = p.caption ? p.caption.slice(0, 120) : STR.igAlt;
         img.loading = "lazy";
         box.append(img);
         a.append(box);

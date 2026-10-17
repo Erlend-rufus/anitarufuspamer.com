@@ -1,0 +1,55 @@
+{%- set L = i18n[lang] %}
+{%- set portraits = L.portraits %}
+{%- set items = portraits %}
+<section class="pt-top">
+  <div class="pt-top__left">
+    <a class="back-link back-link--muted" href="{{ L.ui.paths.home }}">{{ L.ui.portraits.back }}</a>
+    <h1 class="pt-title">{{ L.ui.portraits.title }}</h1>
+  </div>
+  {%- if L.site.portraitsText or items.length %}
+  <div class="pt-top__right">
+    {%- if L.site.portraitsText %}<p>{{ L.site.portraitsText }}</p>{% endif %}
+    {%- if items.length %}<span class="pt-count">{{ (L.ui.portraits.count1 if items.length == 1 else L.ui.portraits.countN) | replace("{n}", items.length | string) }}</span>{% endif %}
+  </div>
+  {%- endif %}
+</section>
+
+{%- if items.length %}
+<section class="pt-gallery">
+  <div class="pt-grid">
+    {%- for p in items %}
+    {%- set m = p.metaText or ([p.technique, p.size, p.year] | meta) %}
+    <figure class="pt-item" id="portrett-{{ loop.index }}">
+      <button class="pt-item__open frame frame--{{ 'a' if loop.index0 % 2 == 0 else 'b' }}" type="button" data-lightbox-open="{{ loop.index0 }}" aria-label="{{ L.ui.portraits.showLarge | replace('{t}', p.title or (L.ui.portraits.fallback + ' ' + loop.index)) }}">
+        {% bilde p.image, p.alt, "(min-width: 900px) 33vw, 50vw", { crop: p.crop } %}
+      </button>
+      {%- if p.title or m %}
+      <figcaption>{% if p.title %}<span class="pt-item__title">{{ p.title }}</span>{% endif %}{% if m %}<span class="pt-item__meta">{{ m }}</span>{% endif %}</figcaption>
+      {%- endif %}
+    </figure>
+    {%- endfor %}
+  </div>
+</section>
+
+<dialog class="lightbox" aria-label="{{ L.ui.portraits.dialog }}" data-lightbox>
+  {%- for p in items %}
+  {%- set m = p.metaText or ([p.technique, p.size, p.year] | meta) %}
+  <div class="lightbox__slide" data-slide hidden>
+    <div class="lightbox__img">{% bilde p.image, p.alt, "(min-width: 900px) 60vw, 100vw", { crop: p.crop, aspect: p.aspect } %}</div>
+    <div class="lightbox__text">
+      <span class="lightbox__num">{{ loop.index | pad2 }} / {{ items.length | pad2 }}</span>
+      {%- if p.title %}<span class="lightbox__title">{{ p.title }}</span>{% endif %}
+      {%- if m %}<span class="lightbox__meta">{{ m }}</span>{% endif %}
+      <button class="btn btn--solid" type="button" data-inquire="{{ (p.title or (L.ui.portraits.fallback + ' ' + loop.index)) + ' — ' + L.ui.portraits.title }}">{{ L.ui.exh.enquire }}</button>
+      <div class="lightbox__nav">
+        <button type="button" data-lightbox-step="-1">{{ L.ui.portraits.prev }}</button>
+        <button type="button" data-lightbox-step="1">{{ L.ui.portraits.next }}</button>
+        <button type="button" class="lightbox__close" data-lightbox-close>{{ L.ui.portraits.close }}</button>
+      </div>
+    </div>
+  </div>
+  {%- endfor %}
+</dialog>
+{%- endif %}
+
+{% include "partials/foresporsel.njk" %}
