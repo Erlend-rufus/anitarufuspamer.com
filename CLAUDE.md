@@ -77,7 +77,7 @@ Bildestier i `content/*.json` er relative til `images/` (f.eks. `utstillinger/va
 - **Presentasjonssiden for søknader:** Anita overlater utformingen til Claude, men innholdet finnes ikke ennå. Lag den som skjult side (`noindex`, ikke i meny eller sitemap) når innholdet foreligger.
 - **Engelsk versjon:** ja. Claude oversetter, Erlend godkjenner. Ferdig bygget under `/en/`, med språkbryter i topplinjen.
 - **Statistikk:** Netlify Analytics (slått på i Netlify av Erlend 13.10.2026). Den teller på serversiden uten informasjonskapsler, så det trengs verken kode eller samtykkebanner. Ikke legg inn Google Tag Manager. Dagens Webnode-side hadde 11 875 besøkende; Netlify teller bare fra den ble slått på.
-- **Instagram:** brukernavn mangler fortsatt.
+- **Instagram:** `@anita.pamer` (satt i `content/site.json`). Innleggene hentes først når `INSTAGRAM_TOKEN` er lagt inn i Netlify. Kontoen må være Creator eller Business.
 
 ## Innhold hentet fra den gamle siden
 Bildene og tekstene fra Webnode ble importert med `migrering/importer-scrape.py` (se `docs` i handoff fra scraperen).
