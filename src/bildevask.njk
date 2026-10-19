@@ -1,0 +1,79 @@
+---
+permalink: /bildevask/index.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bildevask</title>
+<link rel="preload" href="/fonts/pt-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fira-sans-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/bildevask.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="intro">
+    <span class="label">anitarufuspamer.com · bilder til nettsiden</span>
+    <h1>Bildevask</h1>
+    <p>Last opp bilder av verkene dine. Trykk «Start rensing», så retter jeg opp bildet og klipper bort veggen rundt. Du ser før og etter, og godkjenner under hvert bilde. Godkjente bilder legges på nettsiden.</p>
+  </header>
+
+  <section class="gate" id="port" hidden>
+    <p>Skriv inn koden du har fått.</p>
+    <form class="row" id="kodeskjema">
+      <label class="f" for="kode">Kode<input type="password" id="kode" autocomplete="current-password" required></label>
+      <button class="btn" type="submit">Fortsett</button>
+    </form>
+    <p class="notice" id="kodefeil" hidden></p>
+  </section>
+
+  <div id="app" hidden>
+  <ol class="steps">
+    <li>Last opp bildene. Skriv navn og velg utstilling hvis du vet det.</li>
+    <li>Trykk «Start rensing».</li>
+    <li>Godkjenn bildene du er fornøyd med, eller trykk «Godkjenn alle».</li>
+  </ol>
+
+  <p class="notice" id="melding" hidden></p>
+
+  <section class="drop" id="drop" aria-label="Last opp bilder">
+    <label class="btn" for="filer" id="velg">Velg bilder</label>
+    <input type="file" id="filer" multiple accept="image/jpeg,image/png,image/webp">
+    <small>Du kan også slippe bildene her. JPG, PNG eller WebP. Bruk gjerne originalbildet fra kameraet, ikke et skjermbilde, så blir resultatet skarpere.</small>
+    <p class="progress" id="fremdrift" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="block" aria-labelledby="h-mine">
+    <div class="head"><h2 id="h-mine">1. Dine bilder</h2><span class="count" id="n-mine"></span></div>
+    <div class="bar">
+      <button class="btn" type="button" id="start" hidden>Start rensing</button>
+      <button class="btn btn--line" type="button" id="stopp" hidden>Stopp</button>
+      <span class="ok-text" id="rens-status" role="status" aria-live="polite"></span>
+    </div>
+    <div class="cards" id="mine"></div>
+    <p class="empty" id="tom-mine">Ingen bilder ennå. Trykk «Velg bilder» for å begynne.</p>
+  </section>
+
+  <section class="block" aria-labelledby="h-rengjort">
+    <div class="head"><h2 id="h-rengjort">2. Rengjort, til godkjenning</h2><span class="count" id="n-rengjort"></span></div>
+    <div class="bar"><button class="btn" type="button" id="alle" hidden>Godkjenn alle</button></div>
+    <div class="cards" id="rengjort"></div>
+    <p class="empty" id="tom-rengjort">Her dukker bildene opp når de er renset.</p>
+  </section>
+
+  <section class="block" aria-labelledby="h-ferdig">
+    <div class="head"><h2 id="h-ferdig">3. Godkjent og lagt på nettsiden</h2><span class="count" id="n-ferdig"></span></div>
+    <p class="hint">Godkjente bilder legges på nettsiden automatisk. Det tar et par minutter før de vises.</p>
+    <div class="bar"><button class="btn btn--line btn--small" type="button" id="publiser" hidden>Prøv å publisere igjen</button></div>
+    <div class="cards" id="ferdig"></div>
+    <p class="empty" id="tom-ferdig">Godkjente bilder havner her.</p>
+  </section>
+  </div>
+</main>
+<script id="utstillinger" type="application/json">[{% for e in i18n.no.exhibitions %}{"slug":{{ e.slug | dump | safe }},"title":{{ e.title | dump | safe }}}{% if not loop.last %},{% endif %}{% endfor %}]</script>
+<script src="/js/bildevask.js"></script>
+</body>
+</html>

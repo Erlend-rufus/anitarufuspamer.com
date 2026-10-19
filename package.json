@@ -14,5 +14,8 @@
     "@11ty/eleventy-img": "7.0.0",
     "@fontsource/fira-sans": "5.3.0",
     "@fontsource/pt-serif": "5.3.0"
+  },
+  "dependencies": {
+    "@netlify/blobs": "11.1.4"
   }
 }

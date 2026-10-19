@@ -87,13 +87,15 @@ Bildene og tekstene fra Webnode ble importert med `migrering/importer-scrape.py`
 - `/kopi-av-1-til-1-gyldepris-kunsthall/` (presentasjonsside for søknader) videresendes midlertidig (302) til 1-til-1-siden. Den skal bli en skjult side (`noindex`, ikke i meny eller sitemap) når innholdet finnes.
 
 ## Bildevask (rengjøring av bilder)
-Anita laster opp bilder på artefakten «Bildevask» (https://claude.ai/artifact/RGLTCwJSsgu7waHfwABkUg). Hun velger ingenting annet enn valgfritt navn og utstilling. Alt skjer på siden:
-1. «Start rensing»: siden ber Claude (via `sample`, på Anitas egen Claude-konto) finne de fire hjørnene på verket, retter opp bildet i nettleseren og klipper bort veggen. Resultatet er WebP, lang side maks 2400 px. Er bildet ikke ett flatt rektangulært verk, blir det bare gjort mindre.
+Anita bruker siden `/bildevask/` (skjult: `noindex`, ikke i meny eller sitemap) med en kode, uten claude.ai-innlogging. Hun velger ingenting annet enn valgfritt navn og utstilling.
+1. «Start rensing»: nettleseren ber funksjonen `netlify/functions/bildevask.mjs` om hjørnene på verket (Claude via Anthropic-API-et, to runder), retter opp bildet og klipper bort veggen. Resultatet er WebP (JPEG hvis nettleseren ikke kan lage WebP), lang side maks 2400 px, med forsiktig lysjustering (maks 25 %). Er bildet ikke ett flatt rektangulært verk, blir det bare gjort mindre.
 2. Anita ser før og etter og trykker «Godkjenn» eller «Ikke godkjent» under hvert bilde, eller «Godkjenn alle».
-3. Godkjente bilder (`bilder/<id>` med `status: "godkjent"` og `cleanAssetId`) publiseres av den planlagte oppgaven «Publiser godkjente bilder fra Bildevask» (hver time, 07–21 norsk tid). Den legger bildet i `images/utstillinger/<slug>/` og et nytt verk bakerst i `works` (uten tittel/teknikk/mål hvis Anita ikke har skrevet det), eller i `images/rengjort/` + `content/rengjort.json` når ingen utstilling er valgt, bygger, lager PR, merger og setter `status: "publisert"`.
-- Malerier får **aldri** automatisk bakgrunnsfjerning. Den sletter malt bakgrunn. Rensingen er en perspektivretting til hjørnene, pluss en forsiktig lysjustering (maks 25 %).
-- Anonym opplasting finnes ikke: Anita må være logget inn på claude.ai og ha redigeringstilgang til artefakten.
-- `verktoy/bildevask.py` er en eldre Python-variant (hjørner markert for hånd, `rembg` for skulpturer). Brukes bare hvis siden ikke kan rense et bilde.
+3. Ved godkjenning lager funksjonen én commit direkte på `main` via GitHub-API-et: bildet i `images/utstillinger/<slug>/` og et nytt verk bakerst i `works` (tittel bare hvis Anita har skrevet den, ellers tomme felt; alt-tekst lages av Claude, `kilde` = filnavn). Uten utstilling havner bildet i `images/rengjort/` og `content/rengjort.json` (vises ikke på siden). Netlify bygger på nytt.
+- Bilder og status ligger i Netlify Blobs (butikken `bildevask`). Originalene committes aldri.
+- Miljøvariabler i Netlify (aldri i repoet): `BILDEVASK_KODE` (koden Anita bruker), `ANTHROPIC_API_KEY` (rensing og alt-tekst betales per bilde), `GITHUB_TOKEN` (fine-grained, kun dette repoet, «Contents: Read and write»). Valgfritt: `BILDEVASK_MODEL`, `GITHUB_REPO`. Uten dem svarer siden at den ikke er satt opp.
+- Malerier får **aldri** automatisk bakgrunnsfjerning. Den sletter malt bakgrunn. Rensingen er en perspektivretting til hjørnene.
+- Netlify-funksjoner tar maks 6 MB per forespørsel. Siden minsker derfor bildene til maks 2600 px før opplasting.
+- Den gamle varianten (artefakt på claude.ai med timevis publisering) og `verktoy/bildevask.py` (hjørner for hånd, `rembg`) er erstattet. Python-verktøyet brukes bare hvis siden ikke kan rense et bilde.
 
 ## Plassholdere
 `"plassholdere": true` i `content/site.json` fyller tomme felt og seksjoner med plassholderne fra designprototypen: «Verktittel I», «Teknikk · mål · år», «Tekst om utstillingen kommer.», Sted/Periode «—», 9 portretter, 6 eksempelinnlegg på Instagram, «Portrett av Anita», og utsnitt av de tre 1-til-1-bildene. Logikken ligger i `lib/plassholdere.js`, og bildene ligger i `src/plassholder/`.
