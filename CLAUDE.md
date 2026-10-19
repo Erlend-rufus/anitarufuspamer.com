@@ -86,6 +86,15 @@ Bildene og tekstene fra Webnode ble importert med `migrering/importer-scrape.py`
 - Bildene fra den gamle forsiden: 13 av 25 finnes allerede i utstillingene. De 12 andre ligger i `images/arkiv/` og er listet i `content/arkiv.json`. De vises ikke på siden før vi vet hvilken utstilling de hører til. Flytt dem da inn i riktig utstilling og fjern dem fra arkivet.
 - `/kopi-av-1-til-1-gyldepris-kunsthall/` (presentasjonsside for søknader) videresendes midlertidig (302) til 1-til-1-siden. Den skal bli en skjult side (`noindex`, ikke i meny eller sitemap) når innholdet finnes.
 
+## Bildevask (rengjøring av bilder)
+Anita laster opp bilder på artefakten «Bildevask» (https://claude.ai/artifact/RGLTCwJSsgu7waHfwABkUg). Hun velger type per bilde: `maleri` (markerer fire hjørner), `objekt` (skulptur o.l.) eller `behold`. Når hun sier fra, gjør Claude dette:
+1. Les `bilder`-dokumentene med ArtifactData og hent originalene (asset-id) til en mappe, med filnavn `<id>.<endelse>`.
+2. Kjør `python3 verktoy/bildevask.py <originaler> <bilder.json> images/rengjort --innhold content/rengjort.json`. Trenger pillow, numpy, opencv-python-headless og rembg[cpu].
+3. Se på `kontrollark.jpg`. Last forhåndsvisningene opp som `rengjort/<id>` i artefakten og sett status `rengjort`, så Anita kan godkjenne eller be om omgjøring.
+4. Først når hun har godkjent legges bildene i utstillingen (flytt fra `content/rengjort.json`). Originalene ligger i asset-lageret og committes aldri.
+- Malerier får **aldri** automatisk bakgrunnsfjerning. Den sletter malt bakgrunn. De rettes opp og beskjæres til hjørnene Anita har markert.
+- Anonym opplasting finnes ikke: Anita må være logget inn på claude.ai og ha redigeringstilgang til artefakten.
+
 ## Plassholdere
 `"plassholdere": true` i `content/site.json` fyller tomme felt og seksjoner med plassholderne fra designprototypen: «Verktittel I», «Teknikk · mål · år», «Tekst om utstillingen kommer.», Sted/Periode «—», 9 portretter, 6 eksempelinnlegg på Instagram, «Portrett av Anita», og utsnitt av de tre 1-til-1-bildene. Logikken ligger i `lib/plassholdere.js`, og bildene ligger i `src/plassholder/`.
 - Ekte innhold går alltid foran. Et felt fylles bare når det er tomt, og en utstilling får plassholderverk bare når `works` er tom.
