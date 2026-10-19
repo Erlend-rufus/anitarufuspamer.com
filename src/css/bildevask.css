@@ -1,0 +1,79 @@
+@import url("/css/tokens.css");
+/* Samme visuelle språk som nettsiden: grått og hvitt, PT Serif + Fira Sans, ingen avrunding.
+   Layout: én smal kolonne for mobil, kort i rutenett for bildene. */
+:root {
+  --bg: #FFFFFF; --fg: #3B3B3B; --muted: #6A6A6A; --line: #D6D6D3; --tint: #F4F4F2; --field: #FFFFFF;
+  --ph: #ECECEA; --checkA: #E4E4E1; --checkB: #F4F4F2; --ok: #3B3B3B; --warn: #3B3B3B; --on-ok: #FFFFFF;
+  --serif: "PT Serif", Georgia, serif; --sans: "Fira Sans", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1E1E1D; --fg: #E8E8E5; --muted: #B0B0AC; --line: #3A3A38; --tint: #262625; --field: #242423;
+  --ph: #2E2E2C; --checkA: #3A3A38; --checkB: #2E2E2C; --ok: #E8E8E5; --warn: #E8E8E5; --on-ok: #1E1E1D; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #1E1E1D; --fg: #E8E8E5; --muted: #B0B0AC; --line: #3A3A38; --tint: #262625; --field: #242423;
+  --ph: #2E2E2C; --checkA: #3A3A38; --checkB: #2E2E2C; --ok: #E8E8E5; --warn: #E8E8E5; --on-ok: #1E1E1D; color-scheme: dark }
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font: 300 16px/1.6 var(--sans); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 48px); padding-block: 40px 96px; display: flex; flex-direction: column; gap: 48px; }
+h1, h2 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; letter-spacing: -.02em; }
+h2 { font-size: clamp(24px, 3vw, 32px); line-height: 1.15; }
+p { margin: 0; max-width: 62ch; }
+.label { font: 400 12px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.intro { display: flex; flex-direction: column; gap: 18px; }
+.steps { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; max-width: 62ch; }
+.steps li::marker { font-variant-numeric: tabular-nums; }
+.notice { border: 1px solid var(--line); background: var(--tint); padding: 14px 16px; font-size: 15px; }
+.notice[hidden] { display: none; }
+
+.btn { display: inline-block; font: 400 15px/1 var(--sans); padding: 14px 24px; border: 1px solid var(--fg); background: var(--fg); color: var(--bg); cursor: pointer; border-radius: 0; }
+.btn:hover { opacity: .85; }
+.btn--line { background: transparent; color: var(--fg); }
+.btn--small { padding: 10px 16px; font-size: 14px; }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+
+.drop { border: 1px dashed var(--muted); padding: clamp(24px, 5vw, 48px); display: flex; flex-direction: column; gap: 14px; align-items: flex-start; background: var(--tint); }
+.drop.is-over { border-style: solid; border-color: var(--fg); }
+.drop input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.drop small, .hint { font-size: 14px; color: var(--muted); }
+.drop .progress { font-size: 14px; font-variant-numeric: tabular-nums; min-height: 1.4em; }
+
+section.block { display: flex; flex-direction: column; gap: 22px; }
+.head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.count { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; font-size: 15px; }
+.bar { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 36px 28px; }
+.card { display: flex; flex-direction: column; gap: 14px; min-width: 0; border-top: 1px solid var(--line); padding-top: 14px; }
+.card__top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; min-width: 0; }
+.card__name { font-size: 12px; color: var(--muted); overflow-wrap: anywhere; min-width: 0; }
+.chip { font: 400 11px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; padding: 5px 8px; border: 1px solid var(--fg); white-space: nowrap; }
+.chip--ok { background: var(--ok); color: var(--on-ok); }
+.pic { background: var(--ph); aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.pic img { max-width: 100%; max-height: 100%; display: block; }
+.pic--check { background-image: conic-gradient(var(--checkA) 25%, var(--checkB) 0 50%, var(--checkA) 0 75%, var(--checkB) 0); background-size: 20px 20px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pair figcaption { font-size: 12px; color: var(--muted); padding-top: 4px; }
+.pair figure { margin: 0; min-width: 0; }
+
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+legend { font-size: 13px; color: var(--muted); padding: 0 0 6px; }
+.choice { display: grid; grid-template-columns: 22px 1fr; gap: 2px 8px; align-items: start; cursor: pointer; }
+.choice input { margin: 4px 0 0; width: 18px; height: 18px; accent-color: var(--fg); }
+.choice span.t { font-weight: 400; }
+.choice span.d { grid-column: 2; font-size: 13px; color: var(--muted); line-height: 1.45; }
+label.f { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); min-width: 0; }
+input[type=text], select, textarea { font: 300 16px/1.4 var(--sans); color: var(--fg); background: var(--field); border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 8px 0; width: 100%; min-width: 0; }
+textarea { resize: vertical; min-height: 64px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.ok-text { font-size: 14px; }
+
+
+.gate { display: flex; flex-direction: column; gap: 14px; max-width: 360px; }
+.gate .row { align-items: flex-end; }
+.gate label.f { flex: 1; }
+.link { background: none; border: 0; padding: 0; font: inherit; color: var(--muted); text-decoration: underline; cursor: pointer; }
+#app { display: flex; flex-direction: column; gap: 48px; }

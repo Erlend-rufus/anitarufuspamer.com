@@ -18,3 +18,14 @@
   for = "/img/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/bildevask/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/api/bildevask/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
