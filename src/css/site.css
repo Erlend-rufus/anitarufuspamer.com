@@ -499,3 +499,24 @@ a:hover { color: var(--muted); }
   .gauge__marker { display: none; }
   *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
 }
+
+/* ---------- Mobil: trykkflater på minst 44 px ---------- */
+/* Selve utseendet endres ikke. Et usynlig felt rundt lenkene gjør dem lettere å treffe med tommel. */
+button, a, input, select, textarea, summary { touch-action: manipulation; }
+@media (pointer: coarse), (max-width: 859.98px) {
+  .topbar__logo, .back-link, .underline-link, .section-head__title, .footer a, .about__footer a { position: relative; }
+  .topbar__logo::after, .back-link::after, .underline-link::after, .section-head__title::after, .footer a::after, .about__footer a::after {
+    content: ""; position: absolute; inset: -12px -6px;
+  }
+  .topbar__toggle { min-height: 44px; padding-inline: 20px; }
+}
+
+/* Mobil: 100vh er for høyt i Safari og Chrome på telefon (adresselinjen er med). svh er synlig høyde. */
+@supports (height: 100svh) {
+  .page { min-height: 100svh; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero { --hh: max(420px, calc(100svh - var(--header-h))); --step: max(480px, 75svh); }
+  }
+  .lightbox__img { height: clamp(240px, calc(100svh - var(--header-h) - 300px), 760px); }
+  @media (min-width: 900px) { .lightbox__img { height: clamp(240px, calc(100svh - var(--header-h) - 96px), 760px); } }
+}
