@@ -87,13 +87,13 @@ Bildene og tekstene fra Webnode ble importert med `migrering/importer-scrape.py`
 - `/kopi-av-1-til-1-gyldepris-kunsthall/` (presentasjonsside for søknader) videresendes midlertidig (302) til 1-til-1-siden. Den skal bli en skjult side (`noindex`, ikke i meny eller sitemap) når innholdet finnes.
 
 ## Bildevask (rengjøring av bilder)
-Anita laster opp bilder på artefakten «Bildevask» (https://claude.ai/artifact/RGLTCwJSsgu7waHfwABkUg). Hun velger type per bilde: `maleri` (markerer fire hjørner), `objekt` (skulptur o.l.) eller `behold`. Når hun sier fra, gjør Claude dette:
-1. Les `bilder`-dokumentene med ArtifactData og hent originalene (asset-id) til en mappe, med filnavn `<id>.<endelse>`.
-2. Kjør `python3 verktoy/bildevask.py <originaler> <bilder.json> images/rengjort --innhold content/rengjort.json`. Trenger pillow, numpy, opencv-python-headless og rembg[cpu].
-3. Se på `kontrollark.jpg`. Last forhåndsvisningene opp som `rengjort/<id>` i artefakten og sett status `rengjort`, så Anita kan godkjenne eller be om omgjøring.
-4. Først når hun har godkjent legges bildene i utstillingen (flytt fra `content/rengjort.json`). Originalene ligger i asset-lageret og committes aldri.
-- Malerier får **aldri** automatisk bakgrunnsfjerning. Den sletter malt bakgrunn. De rettes opp og beskjæres til hjørnene Anita har markert.
+Anita laster opp bilder på artefakten «Bildevask» (https://claude.ai/artifact/RGLTCwJSsgu7waHfwABkUg). Hun velger ingenting annet enn valgfritt navn og utstilling. Alt skjer på siden:
+1. «Start rensing»: siden ber Claude (via `sample`, på Anitas egen Claude-konto) finne de fire hjørnene på verket, retter opp bildet i nettleseren og klipper bort veggen. Resultatet er WebP, lang side maks 2400 px. Er bildet ikke ett flatt rektangulært verk, blir det bare gjort mindre.
+2. Anita ser før og etter og trykker «Godkjenn» eller «Ikke godkjent» under hvert bilde, eller «Godkjenn alle».
+3. Godkjente bilder (`bilder/<id>` med `status: "godkjent"` og `cleanAssetId`) publiseres av den planlagte oppgaven «Publiser godkjente bilder fra Bildevask» (hver time, 07–21 norsk tid). Den legger bildet i `images/utstillinger/<slug>/` og et nytt verk bakerst i `works` (uten tittel/teknikk/mål hvis Anita ikke har skrevet det), eller i `images/rengjort/` + `content/rengjort.json` når ingen utstilling er valgt, bygger, lager PR, merger og setter `status: "publisert"`.
+- Malerier får **aldri** automatisk bakgrunnsfjerning. Den sletter malt bakgrunn. Rensingen er en perspektivretting til hjørnene, pluss en forsiktig lysjustering (maks 25 %).
 - Anonym opplasting finnes ikke: Anita må være logget inn på claude.ai og ha redigeringstilgang til artefakten.
+- `verktoy/bildevask.py` er en eldre Python-variant (hjørner markert for hånd, `rembg` for skulpturer). Brukes bare hvis siden ikke kan rense et bilde.
 
 ## Plassholdere
 `"plassholdere": true` i `content/site.json` fyller tomme felt og seksjoner med plassholderne fra designprototypen: «Verktittel I», «Teknikk · mål · år», «Tekst om utstillingen kommer.», Sted/Periode «—», 9 portretter, 6 eksempelinnlegg på Instagram, «Portrett av Anita», og utsnitt av de tre 1-til-1-bildene. Logikken ligger i `lib/plassholdere.js`, og bildene ligger i `src/plassholder/`.
